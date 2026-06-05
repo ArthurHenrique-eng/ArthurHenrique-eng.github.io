@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Arthur Henrique de Paula Barbosa, desenvolvedor de software com projetos em Python, Flask, SQL, HTML, CSS e JavaScript.">
+  <title>Arthur Henrique | Desenvolvedor de Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="progress-bar" aria-hidden="true"></div>
+
+  <header class="site-header" id="topo">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark">AH</span>
+        <span>Arthur Henrique</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#experiencia">Experiência</a>
+        <a href="#formacao">Formação</a>
+        <a href="#contato">Contato</a>
+        <button class="theme-toggle" type="button" aria-label="Alternar tema">
+          <span class="theme-icon">◐</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="inicio">
+
+
+      <div class="hero-content reveal">
+        <p class="eyebrow">Desenvolvedor de Software</p>
+        <h1>Arthur Henrique de Paula Barbosa</h1>
+        <p class="hero-text">
+          Estudante de Desenvolvimento de Sistemas, crio projetos web e desktop com
+          foco em organização, aprendizado contínuo e interfaces que resolvem problemas reais.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#projetos">Ver projetos</a>
+          <a class="btn ghost" href="#contato">Falar comigo</a>
+        </div>
+
+        <div class="hero-socials" aria-label="Links de contato">
+          <a class="social-card gmail-card" href="mailto:arthurhpb7@gmail.com" aria-label="Enviar e-mail para Arthur Henrique">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/gmail.svg" alt="" aria-hidden="true">
+            <strong>Gmail</strong>
+            <span>Enviar e-mail</span>
+          </a>
+          <a class="social-card github-card" href="https://github.com/ArthurHenrique-eng" target="_blank" rel="noreferrer" aria-label="Abrir GitHub de Arthur Henrique">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="" aria-hidden="true">
+            <strong>GitHub</strong>
+            <span>Ver códigos</span>
+          </a>
+          <a class="social-card linkedin-card" href="https://www.linkedin.com/in/arthur-barbosa-38564b371/" target="_blank" rel="noreferrer" aria-label="Abrir LinkedIn de Arthur Henrique">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="" aria-hidden="true">
+            <strong>LinkedIn</strong>
+            <span>Conectar</span>
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile-card reveal" aria-label="Cartao de apresentacao">
+        <div class="profile-photo">
+          <!-- Para usar uma foto local, substitua o src abaixo por: assets/img/sua-foto.jpg -->
+          <img src="https://avatars.githubusercontent.com/u/241014612?v=4" alt="Foto de perfil de Arthur Henrique">
+        </div>
+        <div class="profile-info">
+          <p>Disponível para oportunidades de aprendizado, projetos e primeira experiência profissional.</p>
+          <div class="status-pill">
+            <span></span>
+            Contagem, MG
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Sobre mim</p>
+        <h2>Aprendizado rápido, detalhe e vontade de construir.</h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-copy reveal">
+          <p>
+            Venho me preparando para atuar com Desenvolvimento de Sistemas e evoluindo com projetos
+            em Python, Flask, SQL e interfaces web. Tenho facilidade para trabalhar em equipe,
+            seguir instruções, organizar tarefas e aprender novas ferramentas com rapidez.
+          </p>
+          <p>
+            Meu objetivo é conquistar oportunidades na área de software, contribuindo com
+            responsabilidade, pontualidade e dedicação enquanto continuo fortalecendo minha base técnica.
+          </p>
+        </article>
+
+        <div class="skills-panel reveal">
+          <h3>Tecnologias</h3>
+          <div class="skills-list">
+            <span>SQL</span>
+            <span>C#</span>
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projetos">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Projetos</p>
+        <h2>Soluções que mostram prática, lógica e evolução.</h2>
+      </div>
+
+      <div class="project-filters reveal" aria-label="Filtros de projetos">
+        <button class="filter-btn active" type="button" data-filter="all">Todos</button>
+        <button class="filter-btn" type="button" data-filter="web">Web</button>
+        <button class="filter-btn" type="button" data-filter="python">Python</button>
+        <button class="filter-btn" type="button" data-filter="dados">Dados</button>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card reveal" data-category="web python dados">
+          <div class="project-media gradient-finance">
+            <!-- Troque por uma imagem do projeto: <img src="assets/img/lumora-app.jpg" alt="Tela do Lumora App"> -->
+            <span>Lumora App</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Lumora App</h3>
+              <span>Flask + IA</span>
+            </div>
+            <p>
+              Plataforma de gestão financeira com dashboard, autenticação, analytics,
+              previsões e organização de dados usando Python, Flask e SQLite.
+            </p>
+            <div class="tags">
+              <span>Python</span>
+              <span>Flask</span>
+              <span>SQLite</span>
+              <span>JavaScript</span>
+            </div>
+            <a class="project-link" href="https://github.com/ArthurHenrique-eng/LUMORA-APP" target="_blank" rel="noreferrer">Abrir no GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="python">
+          <div class="project-media gradient-login">
+            <!-- Troque por uma imagem do projeto: <img src="assets/img/sistema-python.jpg" alt="Tela do Sistema Python"> -->
+            <span>Sistema Python</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Sistema Python</h3>
+              <span>Tkinter</span>
+            </div>
+            <p>
+              Sistema desktop de login com validação de credenciais, limite de tentativas,
+              abertura de URL e código organizado por responsabilidades.
+            </p>
+            <div class="tags">
+              <span>Python</span>
+              <span>Tkinter</span>
+              <span>Clean Code</span>
+            </div>
+            <a class="project-link" href="https://github.com/ArthurHenrique-eng/SISTEMA_PYTHON" target="_blank" rel="noreferrer">Abrir no GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="web dados">
+          <div class="project-media gradient-stock">
+            <!-- Troque por uma imagem do projeto: <img src="assets/img/gestao-estoque.jpg" alt="Tela do sistema de estoque"> -->
+            <span>Gestão Estoque</span>
+          </div>
+          <div class="project-body">
+            <div class="project-title">
+              <h3>Gestao de Estoque</h3>
+              <span>Web</span>
+            </div>
+            <p>
+              Protótipo responsivo para controle de estoque, vendas, lotes, dashboards
+              e perfis de acesso para vendedor, estoquista e administrativo.
+            </p>
+            <div class="tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>UX</span>
+            </div>
+            <a class="project-link" href="https://github.com/ArthurHenrique-eng/GESTAO_ESTOQUE" target="_blank" rel="noreferrer">Abrir no GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section experience" id="experiencia">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Experiência</p>
+        <h2>Em busca da primeira oportunidade profissional.</h2>
+      </div>
+
+      <div class="timeline reveal">
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div>
+            <h3>Base profissional em desenvolvimento</h3>
+            <p>
+              Mesmo sem experiência formal, desenvolvo projetos próprios para praticar
+              lógica, organização de código, interfaces e uso de banco de dados.
+            </p>
+          </div>
+        </article>
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div>
+            <h3>Competencias comportamentais</h3>
+            <p>
+              Proatividade, boa comunicação, trabalho em equipe, adaptabilidade,
+              atenção aos detalhes e responsabilidade com prazos.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section education" id="formacao">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Formação</p>
+        <h2>Estudo contínuo e certificados recentes.</h2>
+      </div>
+
+      <div class="education-grid">
+        <article class="education-card reveal">
+          <span class="year">Fim previsto: 07/2027</span>
+          <h3>Técnico em Desenvolvimento de Sistemas</h3>
+          <p>SENAC Minas - Contagem, MG. Período noturno.</p>
+        </article>
+        <article class="education-card reveal">
+          <span class="year">Conclusão em 12/2025</span>
+          <h3>Ensino Médio</h3>
+          <p>SESI Alvimar Carneiro de Rezende - Contagem, MG.</p>
+        </article>
+        <article class="education-card reveal">
+          <span class="year">2025</span>
+          <h3>HTML, CSS e JavaScript</h3>
+          <p>Escola do Trabalhador 4.0 Microsoft.</p>
+          <p>Curso online</p>
+        </article>
+        <article class="education-card reveal">
+          <span class="year">2025</span>
+          <h3>Engenharia de Software</h3>
+          <p>Pensar Cursos.</p>
+          <p>Curso online</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="contact-inner reveal">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2>Vamos conversar sobre tecnologia, projetos ou oportunidades.</h2>
+          <p>
+            Estou aberto a aprendizados, networking e oportunidades para entrar na área
+            de desenvolvimento de software.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:arthurhpb7@gmail.com">arthurhpb7@gmail.com</a>
+          <button class="btn ghost copy-email" type="button" data-email="arthurhpb7@gmail.com">Copiar e-mail</button>
+          <a class="btn ghost" href="https://www.linkedin.com/in/arthur-barbosa-38564b371/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/ArthurHenrique-eng" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Arthur Henrique de Paula Barbosa</p>
+    <a href="#inicio">Voltar ao topo</a>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
