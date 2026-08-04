@@ -4,10 +4,9 @@
 
 <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=28&duration=3500&pause=1000&color=2F81F7&center=true&vCenter=true&width=900&lines=Desenvolvedor+de+Software;Full+Stack+Developer;Estudante+de+Engenharia+de+Software;Python+%7C+C%23+%7C+JavaScript+%7C+SQL" />
 
-<h10> Portfólio web de Arthur Henrique de Paula Barbosa, estudante de Desenvolvimento de Sistemas.  </h10>
-<h10> Bem-vindo ao meu portfólio pessoal.  </h10>
-<h10> Sou Estudante de Desenvolvimento de Sistemas, com foco em Desenvolvimento Full Stack, Banco de Dados e Engenharia de Software. Tenho experiência prática na criação de aplicações web e desktop, buscando desenvolver soluções funcionais, organizadas e com boa experiência de usuário. </h10>
-<p>
+<p> <h10> Portfólio web de Arthur Henrique de Paula Barbosa, estudante de Desenvolvimento de Sistemas.  </h10>  </p>
+<p> <h10> Bem-vindo ao meu portfólio pessoal.  </h10>  </p>
+<p> <h10> Sou Estudante de Desenvolvimento de Sistemas, com foco em Desenvolvimento Full Stack, Banco de Dados e Engenharia de Software. Tenho experiência prática na criação de aplicações web e desktop, buscando desenvolver soluções funcionais, organizadas e com boa experiência de usuário. </h10>  </p>
 
 ---
 
