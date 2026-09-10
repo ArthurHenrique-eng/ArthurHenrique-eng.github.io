@@ -76,10 +76,17 @@ function initFiltros() {
 }
 
 /* ---------- Galeria / lightbox ---------- */
+
 function initGaleria() {
-  const itens = Array.from(document.querySelectorAll('[data-gallery-item]'));
+
+  const itens = Array.from(
+    document.querySelectorAll('[data-gallery-item]')
+  );
+
   const lightbox = document.getElementById('lightbox');
+  const imagemContainer = document.getElementById('lightboxImagem');
   const legenda = document.getElementById('lightboxLegenda');
+
   const btnFechar = document.getElementById('lightboxFechar');
   const btnAnterior = document.getElementById('lightboxAnterior');
   const btnProximo = document.getElementById('lightboxProximo');
@@ -87,46 +94,131 @@ function initGaleria() {
   let indiceAtual = 0;
   let ultimoFoco = null;
 
+
+  function carregarImagem() {
+
+    const item = itens[indiceAtual];
+
+    const print = item.querySelector('.galeria-print');
+
+    if (!print) {
+      console.error('Print não encontrado:', item);
+      return;
+    }
+
+    legenda.textContent = item.dataset.titulo || '';
+
+    imagemContainer.innerHTML = '';
+
+    const img = document.createElement('img');
+
+    img.src = print.src;
+    img.alt = print.alt || item.dataset.titulo || 'Imagem do projeto';
+
+    imagemContainer.appendChild(img);
+  }
+
+
   function abrir(indice) {
+
     indiceAtual = indice;
-    legenda.textContent = itens[indiceAtual].dataset.titulo || '';
+
+    carregarImagem();
+
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
+
     ultimoFoco = document.activeElement;
+
     btnFechar.focus();
+
     document.body.style.overflow = 'hidden';
   }
 
+
   function fechar() {
+
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
+
+    imagemContainer.innerHTML = '';
+
     document.body.style.overflow = '';
-    if (ultimoFoco) ultimoFoco.focus();
+
+    if (ultimoFoco) {
+      ultimoFoco.focus();
+    }
   }
+
 
   function navegar(direcao) {
-    indiceAtual = (indiceAtual + direcao + itens.length) % itens.length;
-    legenda.textContent = itens[indiceAtual].dataset.titulo || '';
+
+    indiceAtual =
+      (indiceAtual + direcao + itens.length) % itens.length;
+
+    carregarImagem();
   }
 
+
   itens.forEach((item, indice) => {
-    item.addEventListener('click', () => abrir(indice));
+
+    item.addEventListener('click', (evento) => {
+
+      /*
+       * Impede que o clique em qualquer imagem interna
+       * seja tratado de forma diferente.
+       */
+      evento.preventDefault();
+
+      abrir(indice);
+
+    });
+
   });
+
 
   btnFechar.addEventListener('click', fechar);
-  btnAnterior.addEventListener('click', () => navegar(-1));
-  btnProximo.addEventListener('click', () => navegar(1));
+
+
+  btnAnterior.addEventListener('click', () => {
+    navegar(-1);
+  });
+
+
+  btnProximo.addEventListener('click', () => {
+    navegar(1);
+  });
+
 
   lightbox.addEventListener('click', (evento) => {
-    if (evento.target === lightbox) fechar();
+
+    if (evento.target === lightbox) {
+      fechar();
+    }
+
   });
 
+
   document.addEventListener('keydown', (evento) => {
-    if (!lightbox.classList.contains('is-open')) return;
-    if (evento.key === 'Escape') fechar();
-    if (evento.key === 'ArrowLeft') navegar(-1);
-    if (evento.key === 'ArrowRight') navegar(1);
+
+    if (!lightbox.classList.contains('is-open')) {
+      return;
+    }
+
+    if (evento.key === 'Escape') {
+      fechar();
+    }
+
+    if (evento.key === 'ArrowLeft') {
+      navegar(-1);
+    }
+
+    if (evento.key === 'ArrowRight') {
+      navegar(1);
+    }
+
   });
+
 }
 
 /* ---------- Copiar e-mail / telefone ---------- */
