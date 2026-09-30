@@ -26,7 +26,7 @@ Na raiz do repositório:
 python -m http.server 5500
 ```
 
-Acesse `http://localhost:5500`. Não há etapa de build, instalação de dependências ou backend para este portfólio. A publicação continua no GitHub Pages.
+Acesse `http://localhost:5500`. Não há etapa de build, instalação de dependências ou backend para este portfólio. A publicação continua no GitHub Pages. Ao publicar alterações em CSS ou JavaScript, atualize o parâmetro `v` dos respectivos links em `index.html` para renovar o cache dos visitantes.
 
 ## Atualizar projetos
 
