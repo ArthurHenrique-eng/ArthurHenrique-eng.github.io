@@ -1,4 +1,4 @@
-/* Arthur Henrique — identity inspired by the Canva prototype. */
+/* Arthur Barbosa — identity inspired by the Canva prototype. */
 @font-face {
   font-family: Anton;
   src: url("../assets/fonts/anton-regular.ttf") format("truetype");
@@ -273,8 +273,8 @@ svg {
 .brand__logo {
   position: relative;
   display: block;
-  width: 152px;
-  height: 64px;
+  width: 116px;
+  height: 58px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -282,10 +282,10 @@ svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 242px;
-  height: 242px;
+  width: 300px;
+  height: 300px;
   max-width: none;
-  transform: translate(-50%, -51%);
+  transform: translate(-49.4%, -46.65%);
   filter: invert(1);
 }
 .brand__descriptor {
@@ -404,7 +404,7 @@ svg {
   color: #50c5e3;
 }
 
-/* Opening: monochrome typography and a development profile. */
+/* Opening: personal introduction and original portrait. */
 .hero {
   overflow: hidden;
 }
@@ -430,19 +430,13 @@ svg {
   letter-spacing: -0.025em;
   margin: 26px 0 23px;
 }
-.hero__period {
-  color: #50c5e3;
-}
 .hero__role {
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 15px;
 }
-.hero__role > span {
-  margin-inline: 7px;
-  opacity: 0.6;
-}
 .hero__description {
+  max-width: 460px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.85;
@@ -470,105 +464,19 @@ svg {
 }
 .hero__visual {
   min-width: 0;
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
 }
-.dev-panel {
-  overflow: hidden;
-  border: 1px solid #33383e;
-  border-radius: 12px;
-  background: #0d0f11;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-}
-.dev-panel__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 19px 25px;
-  border-bottom: 1px solid #292e33;
-  background: #14171a;
-  font-size: 12px;
-}
-.dev-panel__header > span:first-child {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-.dev-panel__file-icon {
-  color: #7fd9ef;
-}
-.dev-panel__label {
-  color: #adb4bc;
-  font-size: 8px;
-  letter-spacing: 0.09em;
-}
-.dev-panel__body {
-  padding: 28px 25px 18px;
-}
-.dev-panel__comment {
-  color: #adb4bc;
-  font-size: clamp(10px, 0.85vw, 12px);
-  line-height: 1.7;
-}
-.dev-panel__code {
-  margin: 22px 0 30px;
-  font:
-    400 clamp(11px, 1vw, 14px)/2.1 "SFMono-Regular",
-    Consolas,
-    "Liberation Mono",
-    monospace;
-  color: #b9c1c9;
-  tab-size: 2;
-}
-.dev-panel__code code {
-  font: inherit;
-}
-.code-name,
-.code-value {
-  color: #f0f2f4;
-}
-.code-key {
-  color: #7fd9ef;
-}
-.dev-panel__layers {
-  margin: 0;
-}
-.dev-panel__layers > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  padding-block: 13px;
-  border-top: 1px solid #292e33;
-  font-size: 10px;
-}
-.dev-panel__layers dt {
-  white-space: nowrap;
-}
-.dev-panel__layers dt > span {
-  margin-right: 12px;
-  color: #adb4bc;
-  font-size: 9px;
-}
-.dev-panel__layers dd {
-  margin: 0;
-  text-align: right;
-  color: #adb4bc;
-  font-size: 9px;
-}
-.dev-panel__footer {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 14px 25px;
-  border-top: 1px solid #292e33;
-  color: #adb4bc;
-  font-size: 8px;
-  letter-spacing: 0.08em;
-}
-.dev-panel__footer .status-dot {
-  width: 5px;
-  height: 5px;
-  color: #7fd9ef;
+.hero__portrait {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 42%;
+  border: 1px solid #30363c;
+  border-radius: 16px;
+  background: #111315;
 }
 .hero__footer {
   display: flex;
@@ -1447,13 +1355,6 @@ svg {
   .hero__actions .text-link {
     margin-left: 8px;
   }
-  .dev-panel__header,
-  .dev-panel__footer {
-    padding-inline: 20px;
-  }
-  .dev-panel__body {
-    padding-inline: 20px;
-  }
   .project-card__body {
     padding: 20px;
   }
@@ -1499,12 +1400,12 @@ svg {
     font-size: 43px;
   }
   .brand__logo {
-    width: 118px;
-    height: 50px;
+    width: 88px;
+    height: 44px;
   }
   .brand__logo > img {
-    width: 188px;
-    height: 188px;
+    width: 224px;
+    height: 224px;
   }
   .nav__controls {
     margin-left: auto;
@@ -1548,11 +1449,8 @@ svg {
   }
   .hero__visual {
     width: 100%;
-    max-width: 490px;
-    justify-self: end;
-  }
-  .dev-panel__code {
-    font-size: 14px;
+    max-width: 400px;
+    justify-self: center;
   }
   .hero h1 {
     font-size: clamp(70px, 10vw, 95px);
@@ -1562,9 +1460,6 @@ svg {
   }
   .hero__description {
     font-size: 12px;
-  }
-  .desktop-break {
-    display: none;
   }
   .hero .eyebrow {
     font-size: 8px;
@@ -1726,17 +1621,8 @@ svg {
   }
   .hero__visual {
     width: 100%;
-    max-width: 440px;
+    max-width: 360px;
     margin-inline: auto;
-  }
-  .dev-panel__code {
-    font-size: 12px;
-  }
-  .dev-panel__layers > div {
-    font-size: 10px;
-  }
-  .dev-panel__layers dt > span {
-    margin-right: 8px;
   }
   .hero__footer {
     font-size: 6px;
