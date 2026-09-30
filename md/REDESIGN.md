@@ -1,57 +1,49 @@
-# Redesign do portfólio — 30/09/2026
+# Portfólio — atualização de 30/09/2026
 
-## Direção visual
+Referência: [projeto do Canva enviado por Arthur](https://canva.link/6edghj6g9hnrigr), design `DAHWshT4zXw`, versão 52. A primeira página contém o portfólio; a segunda estava vazia na consulta. O projeto do Canva não foi alterado durante esta implementação.
 
-Referência: design **ArthurHenrique-eng.github.io** no Canva, `DAHWpfwU4MU`, versão consultada em 30/09/2026.
+## Layout e conteúdo
 
-Foram aproveitados os títulos grandes, os cartões de projetos e a composição abstrata aprovada da seção de projetos. Após a revisão de Arthur, abertura, apresentação e contato usam fundo preto, sem estrelas decorativas. A abertura apresenta Arthur Barbosa como Desenvolvedor Web Full Stack, com localização em Belo Horizonte–MG, apresentação breve e foto pessoal em moldura simples. A faixa de tecnologias foi removida. A navegação preta e o favicon usam a nova marca PNG fornecida por Arthur. As marcas dos projetos mantêm a transparência original sobre cartões escuros. Os textos provisórios e imagens de produtos do template foram substituídos pelo conteúdo profissional e pelos projetos de Arthur.
+- Fundo preto como tema padrão, títulos Anton e textos Manrope, com fontes locais.
+- Abertura com “Estudante de Engenharia de Software”, apresentação revisada, retrato em moldura clara e faixa com sete ícones de tecnologias.
+- Perfis LinkedIn/GitHub e ícone Lattes na abertura e na apresentação pessoal.
+- Sete projetos preservados, com capturas reais, cartões verdes e a faixa de composição abstrata em CSS.
+- Galeria antes de “Sobre mim”, utilizando as novas marcas fornecidas e mantendo Lumora.
+- Seções numeradas na ordem projetos, galeria, apresentação, formação e contato.
+- Ferramentas, espanhol intermediário, curso Office de 110 horas, Python pelo IFMG e demais textos alinhados à referência.
+- Formação em duas linhas e cartão de experiência em tom cinza amarronzado.
+- Título do formulário “Entre em contato”, marca AB no rodapé e indicação de direitos reservados.
+- Todos os sete links de LinkedIn atualizados para o perfil `arthurhenrique-eng`, incluindo certificações.
 
-A composição abstrata da seção de projetos é desenhada em CSS. Os ícones são SVG locais. Não há bibliotecas de interface, dependências de CDN ou rastreadores.
+A composição desktop acompanha as medidas da referência de 1792 px. No celular, colunas, cartões e navegação se reorganizam para manter o conteúdo legível e utilizável.
 
-## Conteúdo preservado e ampliado
+## Recursos
 
-- Mantidos Lumora App, Academia Fit, Sistema Biblioteca, Sistema Python e Gestão de Estoque.
-- Incluídos ChurrasPlan e Talentix, presentes no protótipo, com links para os repositórios públicos confirmados.
-- Talentix identificado como projeto acadêmico em equipe.
-- Preservadas apresentação, formação, idiomas, certificações, experiência em projetos e informações de contato.
-- Preservadas as âncoras `inicio`, `sobre`, `projetos`, `certificacoes`, `formacao`, `galeria`, `experiencia`, `contato` e `conteudo`.
-- Preservados os arquivos de imagem originais. A página utiliza versões WebP otimizadas.
+As 19 imagens anexadas estão preservadas em `DOCS/`. Logos anteriores também foram reunidas nessa pasta; fotos e capturas permanecem em `assets/img/`. As versões WebP reduzem o peso dos SVGs com imagens incorporadas e dos PNGs de alta resolução. Detalhes e correspondências estão em `DOCS/README.md`.
 
-## Origem das capturas novas
+O currículo Lattes não recebeu um endereço presumido: seu ícone permanece sem link até Arthur fornecer a URL pessoal. Os demais perfis profissionais estão ativos.
 
-| Projeto     | Repositório de origem          | Revisão consultada                         | Tela           |
-| ----------- | ------------------------------ | ------------------------------------------ | -------------- |
+Origem das capturas acrescentadas na versão anterior:
+
+| Projeto | Repositório | Revisão | Tela |
+| --- | --- | --- | --- |
 | ChurrasPlan | ArthurHenrique-eng/ChurrasPlan | `2afa7b0a0780d2c6090b2d2677b6e1b799958d90` | Página inicial |
-| Talentix    | PROJETO-SENAC-MINAS/Talentix   | `d6a43893de5a3ddee302902c59afbe2a1eebb08f` | Área de acesso |
+| Talentix | PROJETO-SENAC-MINAS/Talentix | `d6a43893de5a3ddee302902c59afbe2a1eebb08f` | Área de acesso |
 
-As capturas foram obtidas executando as interfaces localmente, sem autenticação ou dados de usuários. A imagem de Talentix mostra a parte superior da tela de acesso. Nenhum código dos repositórios de origem foi modificado.
+## Comportamento e validação
 
-## Correções de comportamento
+O JavaScript existente foi preservado: filtros, galeria com diálogo nativo, teclado, foco, menu móvel, tema persistente, cópia de contatos e preparação de e-mail. O formulário continua abrindo um rascunho no aplicativo de e-mail do visitante, sem backend e sem simular envio.
 
-- Galeria sem caminhos quebrados pela diferença entre `prints` e `Prints`.
-- Imagens de projeto ampliáveis usando elementos de link e um diálogo nativo.
-- Setas do teclado, Escape, foco contido no diálogo e retorno ao elemento de origem.
-- Filtros usam `hidden` e `aria-pressed`, sem conflito com animações de rolagem.
-- Menu móvel com estado acessível, fechamento por Escape e bloqueio do foco quando fechado.
-- Tema escuro por padrão, com escolha persistente entre claro e escuro. As seções de abertura, apresentação e contato permanecem pretas em ambos os temas. A indisponibilidade de `localStorage` não interrompe o restante da página.
-- Copiar contato apresenta uma alternativa manual se a área de transferência estiver indisponível.
-- Formulário valida conteúdo, mantém os dados preenchidos e prepara um e-mail para revisão pelo visitante.
-- Conteúdo e links essenciais disponíveis com JavaScript desativado.
-- Movimento reduzido respeitado via `prefers-reduced-motion`.
+Verificação local no Chromium:
 
-## Validação realizada
-
-Verificação no Chromium, com inspeção visual de desktop e mobile e testes automatizados de interação:
-
-- Nove larguras: **320, 360, 390, 600, 768, 800, 1024, 1440 e 1920 px**, sem transbordamento horizontal.
-- As **14 imagens utilizadas** carregadas; nenhum erro de JavaScript ou recurso HTTP ausente.
-- Filtros: Todos 7, Web 6, Python 5, Dados 6; resultados permanecem corretos após rolagem.
-- Galeria com sete imagens únicas, navegação circular, teclas direcionais, Tab e Escape.
-- Tema claro/escuro, persistência após recarregar e uso com armazenamento bloqueado.
-- Menu móvel, cópia de e-mail/telefone, alternativa manual e validação do formulário.
-- E-mail de teste preparado com o acionamento externo bloqueado: nenhuma mensagem enviada.
-- Navegação e conteúdo essencial com JavaScript desativado.
-- Auditoria axe-core: **nenhuma violação detectada** nas verificações WCAG 2 A/AA e 2.1 AA em ambos os temas.
-- Sintaxe JavaScript e `git diff --check` sem erros.
-
-As 14 imagens exibidas na página somam aproximadamente **708 KB**, incluindo a nova marca PNG e a foto pessoal em WebP. Os arquivos originais continuam preservados no repositório. As fontes são servidas pelo próprio site, com suas licenças incluídas.
+- Larguras de 320, 390, 600, 768, 800, 1024, 1440, 1792 e 1920 px, sem transbordamento horizontal.
+- 28 elementos de imagem carregados, sem falhas HTTP ou erros de JavaScript.
+- Filtros: Todos 7, Web 6, Python 5 e Dados 6.
+- Galeria com sete imagens únicas, setas do teclado, Escape e retorno de foco.
+- Menu móvel abre, fecha e navega pelas âncoras; estado `inert` e Escape verificados.
+- Temas claro e escuro preservados após recarga.
+- Auditoria axe-core WCAG 2 A/AA e 2.1 AA: nenhuma violação detectada em ambos os temas.
+- Validação dos campos e geração do rascunho `mailto:` com acionamento externo bloqueado no teste; nenhuma mensagem enviada.
+- Conteúdo e navegação essenciais disponíveis com JavaScript desativado.
+- Anexos em `DOCS/` comparados byte a byte com os originais recebidos.
+- Caminhos locais, âncoras, identificadores, sintaxe JavaScript e `git diff --check` verificados.

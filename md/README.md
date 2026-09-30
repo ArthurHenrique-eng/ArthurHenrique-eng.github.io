@@ -1,4 +1,4 @@
-# Arthur Barbosa — Portfólio Web Full Stack
+# Arthur Barbosa — Portfólio pessoal
 
 Portfólio pessoal de Arthur Henrique de Paula Barbosa, estudante de Desenvolvimento de Sistemas no SENAC Minas.
 
@@ -6,15 +6,16 @@ Portfólio pessoal de Arthur Henrique de Paula Barbosa, estudante de Desenvolvim
 
 ## Identidade visual
 
-A versão de setembro de 2026 combina o protótipo do Canva com o conteúdo do portfólio original: fundos pretos na abertura, apresentação e contato; títulos expressivos; foto pessoal; capturas reais dos projetos e marcas com transparência. O bloco de projetos mantém a composição aprovada do protótipo. O tema escuro é o padrão, com opção de tema claro persistente.
+A versão de setembro de 2026 segue o [design do Canva atualizado por Arthur](https://canva.link/6edghj6g9hnrigr): fundo preto, títulos expressivos, retrato em moldura clara com tecnologias, cartões de projetos e galeria de marcas antes da apresentação pessoal. O tema escuro é o padrão, com opção de tema claro persistente.
 
 ## Estrutura
 
-- `index.html`: conteúdo semântico, sete projetos, apresentação, formação, certificações, galeria e contato.
+- `index.html`: conteúdo semântico, sete projetos, galeria, apresentação, formação, certificações e contato.
 - `css/style.css`: identidade visual, temas claro/escuro e estilos responsivos.
 - `js/script.js`: menu, filtros, galeria com teclado, tema, cópia de contatos e preparação de e-mail.
-- `assets/img/optimized/`: imagens WebP otimizadas; foto e capturas dos projetos. A marca pessoal usa o PNG fornecido por Arthur.
-- `assets/img/Prints/`, `assets/img/galeria/` e `assets/img/perfil/`: imagens originais preservadas.
+- `DOCS/`: todas as logos, os anexos originais e suas versões WebP para o site, com um índice de correspondências.
+- `assets/img/optimized/`: foto e capturas dos projetos em WebP.
+- `assets/img/Prints/` e `assets/img/perfil/`: capturas e foto originais preservadas.
 - `assets/fonts/`: fontes Anton e Manrope hospedadas localmente e suas licenças OFL.
 - `md/REDESIGN.md`: decisões de implementação, origem dos novos recursos e validação.
 
@@ -41,3 +42,5 @@ Os caminhos diferenciam maiúsculas de minúsculas no GitHub Pages. As imagens o
 O formulário valida os campos e prepara um link `mailto:` com assunto e mensagem codificados. O visitante revisa e envia a mensagem em seu próprio aplicativo de e-mail. O site não simula envio, não armazena mensagens e não exige credenciais de serviço.
 
 E-mail direto, telefone, GitHub e LinkedIn permanecem disponíveis. Sem JavaScript, os projetos, a navegação e os links diretos continuam acessíveis.
+
+LinkedIn atualizado: [arthurhenrique-eng](https://www.linkedin.com/in/arthurhenrique-eng/). O ícone Lattes aguarda a URL pessoal para ser transformado em link.

@@ -1,4 +1,4 @@
-/* Arthur Barbosa — identity inspired by the Canva prototype. */
+/* Arthur Barbosa — Canva DAHWshT4zXw, revised 30 September 2026. */
 @font-face {
   font-family: Anton;
   src: url("../assets/fonts/anton-regular.ttf") format("truetype");
@@ -51,7 +51,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body[data-theme="dark"] {
-  --paper: #172420;
+  --paper: #000;
   --ink: #f5f5e9;
   --muted: #b8c7bb;
   --line: #3d5044;
@@ -120,7 +120,7 @@ svg {
   outline-color: #7fd9ef;
 }
 .container {
-  width: min(1224px, calc(100% - 104px));
+  width: min(1312px, calc(100% - 104px));
   margin-inline: auto;
 }
 .section {
@@ -178,7 +178,7 @@ svg {
   flex-shrink: 0;
 }
 .display-title {
-  font: 400 clamp(60px, 7.5vw, 108px)/1.05 var(--display);
+  font: 400 clamp(60px, 7.5vw, 108px) / 1.05 var(--display);
   letter-spacing: -0.015em;
 }
 .title-dot {
@@ -273,8 +273,8 @@ svg {
 .brand__logo {
   position: relative;
   display: block;
-  width: 116px;
-  height: 58px;
+  width: 75px;
+  height: 43px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -282,8 +282,8 @@ svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   max-width: none;
   transform: translate(-49.4%, -46.65%);
   filter: invert(1);
@@ -291,7 +291,7 @@ svg {
 .brand__descriptor {
   font: 700 8px/1.6 var(--body);
   letter-spacing: 0.07em;
-  margin-left: 20px;
+  margin-left: 24px;
 }
 .nav__menu {
   display: flex;
@@ -410,11 +410,12 @@ svg {
 }
 .hero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 60px;
   align-items: center;
-  padding-top: 70px;
-  padding-bottom: 64px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  align-items: start;
 }
 .hero__copy {
   position: relative;
@@ -426,9 +427,9 @@ svg {
   align-items: center;
 }
 .hero h1 {
-  font: 400 clamp(86px, 8.6vw, 128px)/1.02 var(--display);
-  letter-spacing: -0.025em;
-  margin: 26px 0 23px;
+  font: 400 clamp(96px, 8.65vw, 155px) / 0.94 var(--display);
+  letter-spacing: -0.015em;
+  margin: 19px 0 33px;
 }
 .hero__role {
   font-size: 14px;
@@ -436,16 +437,21 @@ svg {
   margin-bottom: 15px;
 }
 .hero__description {
-  max-width: 460px;
+  max-width: 480px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.85;
+  font-size: 13px;
+  line-height: 1.8;
 }
 .hero__actions {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-top: 28px;
+  margin-top: 26px;
+}
+.hero__actions .button {
+  min-height: 72px;
+  padding-inline: 28px;
+  gap: 48px;
 }
 .hero__actions .text-link {
   gap: 10px;
@@ -455,7 +461,8 @@ svg {
   align-items: center;
   gap: 9px;
   font-size: 10px;
-  margin-top: 33px;
+  margin-top: 14px;
+  justify-content: center;
 }
 .hero__availability .status-dot {
   background: #50c5e3;
@@ -465,36 +472,75 @@ svg {
 .hero__visual {
   min-width: 0;
   width: 100%;
-  max-width: 440px;
+  max-width: 455px;
   justify-self: end;
+  margin: 16px 19px 0 0;
 }
 .hero__portrait {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 417 / 511;
   object-fit: cover;
   object-position: center 42%;
-  border: 1px solid #30363c;
-  border-radius: 16px;
+  border: 0;
+  border-radius: 20px;
   background: #111315;
 }
-.hero__footer {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid var(--line);
-  padding-block: 19px;
-  font-size: 8px;
-  letter-spacing: 0.12em;
-  font-weight: 700;
+.hero__frame {
+  padding: 21px 18px 15px;
+  border-radius: 24px;
+  background: #d9d7b8;
 }
-.hero__footer a {
+.hero__technologies {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 16px;
+}
+.hero__technologies li {
+  flex: 0 1 44px;
+  min-width: 0;
+}
+.hero__technologies img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.profile-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+.hero__copy .profile-socials {
+  justify-content: flex-end;
+  max-width: 432px;
+  margin-top: 0;
+}
+.profile-socials > a,
+.profile-socials__lattes {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+}
+.profile-socials img {
+  object-fit: contain;
+  max-height: 44px;
+}
+.profile-socials > a {
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.profile-socials > a:hover {
+  transform: translateY(-3px);
 }
 
 /* Projects: screenshots are real captures, thumbnails open the gallery. */
 .project-manifesto {
-  min-height: 244px;
+  min-height: 261px;
   position: relative;
   overflow: hidden;
   background: #d4edf0;
@@ -512,7 +558,7 @@ svg {
   margin-bottom: 17px;
 }
 .project-manifesto > div:first-child > p:last-child {
-  font: 400 clamp(34px, 4vw, 55px)/1.1 var(--display);
+  font: 400 clamp(34px, 4vw, 55px) / 1.1 var(--display);
 }
 .project-manifesto__label {
   position: absolute;
@@ -573,6 +619,9 @@ svg {
   font: 400 66px/1 var(--display);
   transform: rotate(28deg);
   color: #203631;
+}
+.projects {
+  padding-top: 42px;
 }
 .projects-toolbar {
   display: flex;
@@ -753,7 +802,7 @@ svg {
   justify-content: space-between;
 }
 .project-card h3 {
-  font: 400 clamp(23px, 2.25vw, 31px)/1.1 var(--display);
+  font: 400 clamp(23px, 2.25vw, 31px) / 1.1 var(--display);
   letter-spacing: -0.02em;
 }
 .project-type {
@@ -924,10 +973,15 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 100px;
-  margin-top: 60px;
+  margin-top: 38px;
+}
+.journey__subtitle {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  margin-top: 22px;
 }
 .timeline {
-  margin-top: 28px;
+  margin-top: 0;
   border-left: 1px solid var(--line);
 }
 .timeline li {
@@ -958,7 +1012,7 @@ svg {
   letter-spacing: 0.1em;
   color: var(--muted);
 }
-.timeline h4 {
+.timeline h3 {
   font-size: 17px;
   line-height: 1.5;
   margin-block: 9px;
@@ -969,7 +1023,10 @@ svg {
   font-size: 11px;
 }
 .experience {
-  background: var(--card);
+  --ink: #f5f5e9;
+  --muted: #e0ddd9;
+  color: var(--ink);
+  background: #564c48;
   border: 1px solid var(--line);
   padding: 29px 32px;
   border-radius: var(--radius);
@@ -1039,7 +1096,6 @@ svg {
 
 /* Original project identities */
 .gallery {
-  border-top: 1px solid var(--line);
   padding-top: 90px;
 }
 .gallery__grid {
@@ -1057,7 +1113,8 @@ svg {
 }
 .gallery__item > img {
   width: 100%;
-  height: 155px;
+  height: 185px;
+  padding: 15px;
   object-fit: contain;
   background: transparent;
   transition: transform 0.3s;
@@ -1210,6 +1267,10 @@ svg {
 
 /* Footer and accessible native image dialog */
 .site-footer {
+  background: #000;
+  color: #f5f5e9;
+  --muted: #b8c7bb;
+  --line: #30363c;
   padding-block: 40px 20px;
 }
 .footer__top {
@@ -1329,12 +1390,36 @@ svg {
   transform: translate(-50%, 0);
 }
 
+/* The Canva trajectory is inset relative to the main column. */
+@media (min-width: 1101px) {
+  .projects .section-heading {
+    margin-bottom: 68px;
+  }
+  .project-card:not(.project-card--wide) {
+    min-height: 584px;
+  }
+  .project-card--wide {
+    min-height: 322px;
+  }
+  .project-cover {
+    height: 256px;
+  }
+}
+@media (min-width: 1400px) {
+  .nav .brand {
+    margin-left: 48px;
+  }
+  .journey {
+    padding-left: 102px;
+  }
+}
+
 /* Tablet */
 @media (max-width: 1100px) {
   .container {
     width: calc(100% - 64px);
   }
-  .brand__descriptor {
+  .nav .brand__descriptor {
     display: none;
   }
   .nav__menu {
@@ -1354,6 +1439,9 @@ svg {
   }
   .hero__actions .text-link {
     margin-left: 8px;
+  }
+  .hero__copy .profile-socials {
+    margin-top: 18px;
   }
   .project-card__body {
     padding: 20px;
@@ -1451,6 +1539,10 @@ svg {
     width: 100%;
     max-width: 400px;
     justify-self: center;
+    margin: 0;
+  }
+  .hero__copy .profile-socials {
+    justify-content: flex-start;
   }
   .hero h1 {
     font-size: clamp(70px, 10vw, 95px);
@@ -1466,7 +1558,7 @@ svg {
   }
   .hero__availability {
     font-size: 8px;
-    max-width: 255px;
+    max-width: 100%;
   }
   .section-intro {
     font-size: 12px;
@@ -1624,14 +1716,6 @@ svg {
     max-width: 360px;
     margin-inline: auto;
   }
-  .hero__footer {
-    font-size: 6px;
-    padding-block: 16px;
-    gap: 15px;
-  }
-  .hero__footer a {
-    gap: 12px;
-  }
   .section-heading {
     display: block;
     margin-bottom: 28px;
@@ -1778,7 +1862,7 @@ svg {
     gap: 34px;
     margin-top: 36px;
   }
-  .timeline h4 {
+  .timeline h3 {
     font-size: 18px;
   }
   .experience {
