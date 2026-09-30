@@ -242,11 +242,18 @@ svg {
 
 /* Navigation */
 .site-header {
+  --paper: #000;
+  --ink: #f5f5e9;
+  --line: #30363c;
   position: sticky;
   top: 0;
-  background: var(--paper);
+  background: #000;
+  color: var(--ink);
   border-bottom: 1px solid var(--line);
   z-index: 30;
+}
+.site-header :focus-visible {
+  outline-color: #7fd9ef;
 }
 .nav {
   display: flex;
@@ -262,6 +269,24 @@ svg {
 }
 .brand > span:first-child {
   color: #18839e;
+}
+.brand__logo {
+  position: relative;
+  display: block;
+  width: 152px;
+  height: 64px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.brand__logo > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 242px;
+  height: 242px;
+  max-width: none;
+  transform: translate(-50%, -51%);
+  filter: invert(1);
 }
 .brand__descriptor {
   font: 700 8px/1.6 var(--body);
@@ -1472,6 +1497,14 @@ svg {
   }
   .brand {
     font-size: 43px;
+  }
+  .brand__logo {
+    width: 118px;
+    height: 50px;
+  }
+  .brand__logo > img {
+    width: 188px;
+    height: 188px;
   }
   .nav__controls {
     margin-left: auto;
