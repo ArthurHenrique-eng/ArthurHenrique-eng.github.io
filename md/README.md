@@ -1,37 +1,43 @@
-<div align="center">
+# Arthur Henrique — Portfólio Full Stack
 
-<h1 align="center"> ArthurHenrique-eng.github.io </h1>
+Portfólio pessoal de Arthur Henrique de Paula Barbosa, estudante de Desenvolvimento de Sistemas no SENAC Minas.
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=28&duration=3500&pause=1000&color=2F81F7&center=true&vCenter=true&width=900&lines=Desenvolvedor+de+Software;Full+Stack+Developer;Estudante+de+Engenharia+de+Software;Python+%7C+C%23+%7C+JavaScript+%7C+SQL" />
+**Site:** [arthurhenrique-eng.github.io](https://arthurhenrique-eng.github.io/)
 
-<p> <h10> Portfólio web de Arthur Henrique de Paula Barbosa, estudante de Desenvolvimento de Sistemas.  </h10>  </p>
-<p> <h10> Bem-vindo ao meu portfólio pessoal.  </h10>  </p>
-<p> <h10> Sou Estudante de Desenvolvimento de Sistemas, com foco em Desenvolvimento Full Stack, Banco de Dados e Engenharia de Software. Tenho experiência prática na criação de aplicações web e desktop, buscando desenvolver soluções funcionais, organizadas e com boa experiência de usuário. </h10>  </p>
+## Identidade visual
 
----
+A versão de setembro de 2026 combina o protótipo do Canva com o conteúdo do portfólio original: azul, creme e rosa, títulos expressivos, foto pessoal, capturas reais dos projetos e as marcas existentes.
 
-<h1> Feito com: 
-<p> 
-<p>
-<img src="https://skillicons.dev/icons?i=html,css,js,git,github,vscode"/>
- </p>
- </p>
-</h1>
+## Estrutura
 
+- `index.html`: conteúdo semântico, sete projetos, apresentação, formação, certificações, galeria e contato.
+- `css/style.css`: identidade visual, temas claro/escuro e estilos responsivos.
+- `js/script.js`: menu, filtros, galeria com teclado, tema, cópia de contatos e preparação de e-mail.
+- `assets/img/optimized/`: imagens WebP usadas na página, com cerca de 92% de redução em bytes em relação aos arquivos de origem.
+- `assets/img/Prints/`, `assets/img/galeria/` e `assets/img/perfil/`: imagens originais preservadas.
+- `assets/fonts/`: fontes Anton e Manrope hospedadas localmente e suas licenças OFL.
+- `md/REDESIGN.md`: decisões de implementação, origem dos novos recursos e validação.
 
+## Executar localmente
 
-<a href="https://arthurhenrique-eng.github.io/">
-<img src="https://img.shields.io/badge/Portfólio-181717?style=for-the-badge&logo=google-chrome&logoColor=white"/>
-</a>
-<a href="https://github.com/ArthurHenrique-eng">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
-</a>
-<a href="https://www.linkedin.com/in/arthur-barbosa-38564b371/">
-<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin"/>
-</a>
-<a href="mailto:arthurhpb7@gmail.com">
-<img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
+Na raiz do repositório:
 
+```bash
+python -m http.server 5500
+```
 
-</div>
+Acesse `http://localhost:5500`. Não há etapa de build, instalação de dependências ou backend para este portfólio. A publicação continua no GitHub Pages.
+
+## Atualizar projetos
+
+Cada projeto é um `<article class="project-card">` em `index.html`. Atualize título, descrição, tecnologias e link do repositório. O atributo `data-categories` aceita `web`, `python` e `dados`, separados por espaços.
+
+A capa aponta para uma imagem real e inclui `data-gallery-item`, `data-image` e `data-title`. O JavaScript reutiliza imagens iguais sem duplicá-las na navegação da galeria. Ao adicionar ou remover projetos, atualize o número inicial no filtro “Todos” e em `#projectCount`.
+
+Os caminhos diferenciam maiúsculas de minúsculas no GitHub Pages. As imagens originais estão em `assets/img/Prints/`, com **P** maiúsculo.
+
+## Contato
+
+O formulário valida os campos e prepara um link `mailto:` com assunto e mensagem codificados. O visitante revisa e envia a mensagem em seu próprio aplicativo de e-mail. O site não simula envio, não armazena mensagens e não exige credenciais de serviço.
+
+E-mail direto, telefone, GitHub e LinkedIn permanecem disponíveis. Sem JavaScript, os projetos, a navegação e os links diretos continuam acessíveis.
