@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#31a9ce" />
+    <meta name="theme-color" content="#000000" />
     <title>Arthur Henrique — Desenvolvedor Full Stack</title>
     <meta
       name="description"
@@ -41,9 +41,9 @@
       type="font/ttf"
       crossorigin
     />
-    <link rel="stylesheet" href="css/style.css?v=20260930" />
+    <link rel="stylesheet" href="css/style.css?v=20260930-black" />
   </head>
-  <body data-theme="light">
+  <body data-theme="dark">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <svg
       class="icon-definitions"
@@ -52,13 +52,6 @@
     >
       <symbol id="arrow-up-right" viewBox="0 0 24 24">
         <path d="M5 19 19 5M5 5h14v14" />
-      </symbol>
-      <symbol id="star" viewBox="0 0 100 100">
-        <path
-          d="M50 0 59 29 85 15 71 41 100 50 71 59 85 85 59 71 50 100 41 71 15 85 29 59 0 50 29 41 15 15 41 29Z"
-          fill="currentColor"
-          stroke="none"
-        />
       </symbol>
       <symbol id="copy" viewBox="0 0 24 24">
         <rect x="8" y="8" width="12" height="12" rx="2" />
@@ -97,8 +90,8 @@
             class="theme-toggle"
             id="themeToggle"
             type="button"
-            aria-label="Ativar tema escuro"
-            aria-pressed="false"
+            aria-label="Ativar tema claro"
+            aria-pressed="true"
             hidden
           >
             <svg class="icon" aria-hidden="true"><use href="#moon" /></svg
@@ -157,24 +150,48 @@
             </p>
           </div>
           <div class="hero__visual">
-            <span class="hero__code" aria-hidden="true">&lt;/&gt;</span>
-            <div class="portrait">
-              <img
-                src="assets/img/optimized/arthur.webp"
-                width="1086"
-                height="1448"
-                alt="Arthur Henrique em sua mesa de trabalho"
-                fetchpriority="high"
-              /><span class="portrait__caption"
-                >PRAZER, ARTHUR.<svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" /></svg
-              ></span>
+            <div class="dev-panel" aria-label="Meu perfil de desenvolvimento">
+              <div class="dev-panel__header">
+                <span
+                  ><span class="dev-panel__file-icon" aria-hidden="true"
+                    >&lt;/&gt;</span
+                  >
+                  arthur.py</span
+                >
+                <span class="dev-panel__label">PERFIL / 01</span>
+              </div>
+              <div class="dev-panel__body">
+                <p class="dev-panel__comment">
+                  # Construindo soluções, linha a linha.
+                </p>
+                <pre
+                  class="dev-panel__code"
+                ><code><span class="code-name">perfil</span> = {
+  <span class="code-key">"nome"</span>: <span class="code-value">"Arthur Henrique"</span>,
+  <span class="code-key">"foco"</span>: <span class="code-value">"Full Stack"</span>,
+  <span class="code-key">"base"</span>: <span class="code-value">"Contagem, MG"</span>,
+  <span class="code-key">"status"</span>: <span class="code-value">"em evolução"</span>
+}</code></pre>
+                <dl class="dev-panel__layers">
+                  <div>
+                    <dt><span aria-hidden="true">01</span> Dados</dt>
+                    <dd>MySQL · modelagem</dd>
+                  </div>
+                  <div>
+                    <dt><span aria-hidden="true">02</span> Backend</dt>
+                    <dd>Python · FastAPI · Flask</dd>
+                  </div>
+                  <div>
+                    <dt><span aria-hidden="true">03</span> Interface</dt>
+                    <dd>JavaScript · HTML · CSS</dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="dev-panel__footer">
+                <span class="status-dot" aria-hidden="true"></span> APRENDER.
+                CONSTRUIR. EVOLUIR.
+              </div>
             </div>
-            <svg class="hero__star" aria-hidden="true"><use href="#star" /></svg
-            ><span class="hero__note"
-              >Desenvolvendo soluções.<br />
-              Evoluindo todos os dias.</span
-            >
           </div>
         </div>
         <div class="hero__footer container">
@@ -184,17 +201,6 @@
           >
         </div>
       </section>
-      <div class="stack-strip" aria-label="Tecnologias principais">
-        <div class="container">
-          <span>PYTHON</span><svg aria-hidden="true"><use href="#star" /></svg
-          ><span>JAVASCRIPT</span
-          ><svg aria-hidden="true"><use href="#star" /></svg
-          ><span>HTML &amp; CSS</span
-          ><svg aria-hidden="true"><use href="#star" /></svg
-          ><span>FASTAPI &amp; FLASK</span
-          ><svg aria-hidden="true"><use href="#star" /></svg><span>MYSQL</span>
-        </div>
-      </div>
 
       <section
         id="projetos"
@@ -697,9 +703,6 @@
               SOU O<br />
               ARTHUR<span class="title-dot">.</span>
             </h2>
-            <svg class="about__star" aria-hidden="true">
-              <use href="#star" />
-            </svg>
             <p class="about__full-name">
               Arthur Henrique de Paula Barbosa<br />
               Contagem, Minas Gerais
@@ -1027,9 +1030,6 @@
             </div>
           </div>
           <div class="contact__form-wrap">
-            <svg class="contact__star" aria-hidden="true">
-              <use href="#star" />
-            </svg>
             <form id="contactForm" hidden>
               <h3>ME CONTE SUA IDEIA.</h3>
               <label for="contactName">Seu nome</label
@@ -1142,6 +1142,6 @@
       </div>
     </dialog>
     <p class="toast" id="toast" role="status" aria-live="polite"></p>
-    <script src="js/script.js?v=20260930"></script>
+    <script src="js/script.js?v=20260930-black"></script>
   </body>
 </html>

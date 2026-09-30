@@ -28,7 +28,6 @@
   --card: #eeeee4;
   --blue: #31a9ce;
   --pink: #f2abc0;
-  --about: #e3eee8;
   --radius: 16px;
   --display: Anton, Impact, "Arial Narrow", sans-serif;
   --body: Manrope, Arial, sans-serif;
@@ -57,7 +56,6 @@ body[data-theme="dark"] {
   --muted: #b8c7bb;
   --line: #3d5044;
   --card: #22322a;
-  --about: #263b30;
   color-scheme: dark;
 }
 body.modal-open {
@@ -112,14 +110,14 @@ svg {
 }
 ::selection {
   color: #172420;
-  background: #f2abc0;
+  background: #7fd9ef;
 }
 :focus-visible {
-  outline: 3px solid #a53359;
+  outline: 3px solid #1684a0;
   outline-offset: 5px;
 }
 [data-theme="dark"] :focus-visible {
-  outline-color: #fac4d3;
+  outline-color: #7fd9ef;
 }
 .container {
   width: min(1224px, calc(100% - 104px));
@@ -350,15 +348,44 @@ svg {
   transform: translateY(-4px) rotate(-45deg);
 }
 
-/* Opening: blue field, original portrait, pink accent. */
+/* Black sections keep their contrast in either page theme. */
+.hero,
+.about,
+.contact {
+  --paper: #111315;
+  --ink: #f5f6f7;
+  --muted: #adb4bc;
+  --line: #30363c;
+  --card: #111315;
+  background: #000;
+  color: var(--ink);
+  color-scheme: dark;
+}
+.hero :focus-visible,
+.about :focus-visible,
+.contact :focus-visible {
+  outline-color: #7fd9ef;
+}
+.hero .button--ink,
+.contact .button--ink {
+  background: #f5f6f7;
+  color: #101214;
+}
+.hero .button--ink:hover,
+.contact .button--ink:hover {
+  background: #7fd9ef;
+}
+.about .title-dot {
+  color: #50c5e3;
+}
+
+/* Opening: monochrome typography and a development profile. */
 .hero {
-  background: var(--blue);
-  color: #182824;
   overflow: hidden;
 }
 .hero__inner {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
   gap: 60px;
   align-items: center;
   padding-top: 70px;
@@ -379,7 +406,7 @@ svg {
   margin: 26px 0 23px;
 }
 .hero__period {
-  color: var(--paper);
+  color: #50c5e3;
 }
 .hero__role {
   font-size: 14px;
@@ -391,6 +418,7 @@ svg {
   opacity: 0.6;
 }
 .hero__description {
+  color: var(--muted);
   font-size: 14px;
   line-height: 1.85;
 }
@@ -411,82 +439,116 @@ svg {
   margin-top: 33px;
 }
 .hero__availability .status-dot {
-  background: #f8f7ed;
-  border: 1.5px solid #182824;
+  background: #50c5e3;
   width: 9px;
   height: 9px;
 }
 .hero__visual {
-  position: relative;
-  padding: 16px 25px 40px;
-  isolation: isolate;
+  min-width: 0;
 }
-.hero__visual::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 1px -70px 76px 5px;
-  border-radius: 230px 0 0 25px;
-  background: var(--pink);
-  transform: rotate(5deg);
-}
-.portrait {
-  position: relative;
-  border-radius: 180px 180px 12px 12px;
+.dev-panel {
   overflow: hidden;
-  background: #1c201d;
-  transform: rotate(3deg);
-  border: 7px solid #f8f7ed;
-  box-shadow: 11px 13px 0 #152b2633;
+  border: 1px solid #33383e;
+  border-radius: 12px;
+  background: #0d0f11;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
-.portrait > img {
-  width: 100%;
-  height: 457px;
-  object-fit: cover;
-  object-position: center 38%;
-}
-.portrait__caption {
-  background: #f8f7ed;
-  color: #182824;
+.dev-panel__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 18px 9px 45px;
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  font-weight: 700;
+  gap: 16px;
+  padding: 19px 25px;
+  border-bottom: 1px solid #292e33;
+  background: #14171a;
+  font-size: 12px;
 }
-.hero__code {
-  position: absolute;
-  top: -20px;
-  right: -13px;
-  font: 400 55px/1 var(--display);
-  transform: rotate(9deg);
-  z-index: 3;
+.dev-panel__header > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 11px;
 }
-.hero__star {
-  position: absolute;
-  width: 114px;
-  height: 114px;
-  bottom: 27px;
-  left: -26px;
-  color: #f8f7ed;
-  z-index: 3;
-  transform: rotate(-10deg);
+.dev-panel__file-icon {
+  color: #7fd9ef;
 }
-.hero__note {
-  display: block;
-  position: absolute;
-  right: 22px;
-  bottom: -14px;
-  font-size: 10px;
+.dev-panel__label {
+  color: #adb4bc;
+  font-size: 8px;
+  letter-spacing: 0.09em;
+}
+.dev-panel__body {
+  padding: 28px 25px 18px;
+}
+.dev-panel__comment {
+  color: #adb4bc;
+  font-size: clamp(10px, 0.85vw, 12px);
   line-height: 1.7;
-  font-weight: 700;
+}
+.dev-panel__code {
+  margin: 22px 0 30px;
+  font:
+    400 clamp(11px, 1vw, 14px)/2.1 "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+  color: #b9c1c9;
+  tab-size: 2;
+}
+.dev-panel__code code {
+  font: inherit;
+}
+.code-name,
+.code-value {
+  color: #f0f2f4;
+}
+.code-key {
+  color: #7fd9ef;
+}
+.dev-panel__layers {
+  margin: 0;
+}
+.dev-panel__layers > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-block: 13px;
+  border-top: 1px solid #292e33;
+  font-size: 10px;
+}
+.dev-panel__layers dt {
+  white-space: nowrap;
+}
+.dev-panel__layers dt > span {
+  margin-right: 12px;
+  color: #adb4bc;
+  font-size: 9px;
+}
+.dev-panel__layers dd {
+  margin: 0;
+  text-align: right;
+  color: #adb4bc;
+  font-size: 9px;
+}
+.dev-panel__footer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 14px 25px;
+  border-top: 1px solid #292e33;
+  color: #adb4bc;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+.dev-panel__footer .status-dot {
+  width: 5px;
+  height: 5px;
+  color: #7fd9ef;
 }
 .hero__footer {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #18282440;
+  border-top: 1px solid var(--line);
   padding-block: 19px;
   font-size: 8px;
   letter-spacing: 0.12em;
@@ -495,26 +557,6 @@ svg {
 .hero__footer a {
   display: flex;
   gap: 28px;
-}
-.stack-strip {
-  border-bottom: 1px solid var(--line);
-}
-.stack-strip .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-block: 27px;
-  gap: 16px;
-}
-.stack-strip span {
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-.stack-strip svg {
-  width: 18px;
-  height: 18px;
-  color: #248aa3;
 }
 
 /* Projects: screenshots are real captures, thumbnails open the gallery. */
@@ -868,9 +910,6 @@ svg {
 }
 
 /* Biography and trajectory */
-.about {
-  background: var(--about);
-}
 .about__grid {
   display: grid;
   grid-template-columns: 0.92fr 1.08fr;
@@ -882,15 +921,6 @@ svg {
 .about .display-title {
   margin-block: 28px 32px;
   font-size: clamp(74px, 8.5vw, 118px);
-}
-.about__star {
-  position: absolute;
-  color: #248dab;
-  width: 95px;
-  height: 95px;
-  right: 0;
-  top: 170px;
-  transform: rotate(-15deg);
 }
 .about__full-name {
   font-size: 11px;
@@ -1086,8 +1116,9 @@ svg {
 }
 .gallery__item {
   display: block;
-  border: 1px solid var(--line);
-  background: var(--card);
+  border: 1px solid #30363c;
+  background: #101214;
+  color: #f5f6f7;
   border-radius: 12px;
   overflow: hidden;
 }
@@ -1095,7 +1126,7 @@ svg {
   width: 100%;
   height: 155px;
   object-fit: contain;
-  background: #fff;
+  background: transparent;
   transition: transform 0.3s;
 }
 .gallery__item:hover > img {
@@ -1116,10 +1147,6 @@ svg {
 }
 
 /* Contact opens an email draft; there is no simulated delivery. */
-.contact {
-  background: var(--pink);
-  color: #1b2925;
-}
 .contact__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1130,7 +1157,7 @@ svg {
   font-size: clamp(70px, 7.6vw, 105px);
 }
 .contact .display-title > span {
-  color: #256575;
+  color: #50c5e3;
 }
 .contact__copy > p:not(.eyebrow) {
   max-width: 350px;
@@ -1144,7 +1171,7 @@ svg {
   width: fit-content;
   font-size: 20px;
   font-weight: 700;
-  border-bottom: 1px solid #1b2925;
+  border-bottom: 1px solid var(--line);
   padding-bottom: 8px;
 }
 .contact__tools {
@@ -1196,15 +1223,6 @@ svg {
   padding-top: 72px;
   position: relative;
 }
-.contact__star {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  top: -10px;
-  right: 0;
-  transform: rotate(14deg);
-  color: #1b2925;
-}
 .contact form h3 {
   font: 400 34px/1.2 var(--display);
   margin-bottom: 27px;
@@ -1220,17 +1238,17 @@ svg {
 .contact textarea {
   display: block;
   width: 100%;
-  background: #f8f7ed60;
-  border: 1px solid #1b29253d;
+  background: #111315;
+  border: 1px solid #484f56;
   border-radius: 6px;
   padding: 13px 15px;
   font-size: 12px;
-  color: #1b2925;
-  color-scheme: light;
+  color: var(--ink);
+  color-scheme: dark;
 }
 .contact input::placeholder,
 .contact textarea::placeholder {
-  color: #5f4c54;
+  color: #adb4bc;
   opacity: 1;
 }
 .contact textarea {
@@ -1239,7 +1257,7 @@ svg {
 }
 .contact input:focus,
 .contact textarea:focus {
-  background: #f8f7edb8;
+  background: #1b1f23;
 }
 .contact form .button {
   width: 100%;
@@ -1404,15 +1422,12 @@ svg {
   .hero__actions .text-link {
     margin-left: 8px;
   }
-  .hero__visual {
-    padding-inline: 12px;
+  .dev-panel__header,
+  .dev-panel__footer {
+    padding-inline: 20px;
   }
-  .portrait > img {
-    height: 420px;
-  }
-  .hero__star {
-    width: 90px;
-    height: 90px;
+  .dev-panel__body {
+    padding-inline: 20px;
   }
   .project-card__body {
     padding: 20px;
@@ -1429,11 +1444,6 @@ svg {
   }
   .about__grid {
     gap: 60px;
-  }
-  .about__star {
-    width: 60px;
-    height: 60px;
-    right: -10px;
   }
   .contact__grid {
     gap: 70px;
@@ -1500,7 +1510,16 @@ svg {
     margin-top: 6px;
   }
   .hero__inner {
-    gap: 18px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero__visual {
+    width: 100%;
+    max-width: 490px;
+    justify-self: end;
+  }
+  .dev-panel__code {
+    font-size: 14px;
   }
   .hero h1 {
     font-size: clamp(70px, 10vw, 95px);
@@ -1520,35 +1539,6 @@ svg {
   .hero__availability {
     font-size: 8px;
     max-width: 255px;
-  }
-  .portrait > img {
-    height: 330px;
-  }
-  .portrait {
-    border-width: 5px;
-  }
-  .portrait__caption {
-    font-size: 7px;
-    padding: 10px 10px 10px 37px;
-  }
-  .hero__code {
-    font-size: 40px;
-    right: -4px;
-  }
-  .hero__note {
-    font-size: 8px;
-  }
-  .hero__star {
-    width: 68px;
-    height: 68px;
-    left: -8px;
-  }
-  .stack-strip span {
-    font-size: 9px;
-  }
-  .stack-strip svg {
-    width: 13px;
-    height: 13px;
   }
   .section-intro {
     font-size: 12px;
@@ -1590,10 +1580,6 @@ svg {
   }
   .about .display-title {
     font-size: 79px;
-  }
-  .about__star {
-    position: static;
-    margin-bottom: 25px;
   }
   .about__content {
     padding-top: 0;
@@ -1706,37 +1692,18 @@ svg {
     margin-top: 22px;
   }
   .hero__visual {
-    width: 88%;
-    max-width: 360px;
+    width: 100%;
+    max-width: 440px;
     margin-inline: auto;
-    padding: 8px 14px 31px;
   }
-  .hero__visual::before {
-    right: -40px;
-    bottom: 50px;
+  .dev-panel__code {
+    font-size: 12px;
   }
-  .portrait > img {
-    height: 355px;
-    object-position: center 35%;
+  .dev-panel__layers > div {
+    font-size: 10px;
   }
-  .portrait__caption {
-    font-size: 8px;
-    padding: 12px 12px 12px 43px;
-  }
-  .hero__code {
-    right: 0;
-    top: -11px;
-  }
-  .hero__star {
-    left: -10px;
-    bottom: 16px;
-    width: 80px;
-    height: 80px;
-  }
-  .hero__note {
-    font-size: 8px;
-    bottom: -7px;
-    right: 20px;
+  .dev-panel__layers dt > span {
+    margin-right: 8px;
   }
   .hero__footer {
     font-size: 6px;
@@ -1745,19 +1712,6 @@ svg {
   }
   .hero__footer a {
     gap: 12px;
-  }
-  .stack-strip .container {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 15px;
-    padding-block: 22px;
-  }
-  .stack-strip span {
-    font-size: 9px;
-  }
-  .stack-strip svg {
-    width: 11px;
-    height: 11px;
   }
   .section-heading {
     display: block;
@@ -1888,13 +1842,6 @@ svg {
     font-size: 94px;
     margin-block: 25px;
   }
-  .about__star {
-    position: absolute;
-    top: 157px;
-    right: 8px;
-    width: 77px;
-    height: 77px;
-  }
   .about__content > h3 {
     font-size: 21px;
   }
@@ -1980,12 +1927,6 @@ svg {
   .contact__form-wrap {
     padding-top: 30px;
   }
-  .contact__star {
-    width: 48px;
-    height: 48px;
-    top: 9px;
-    right: 5px;
-  }
   .contact form h3 {
     font-size: 31px;
     margin-bottom: 25px;
@@ -2043,15 +1984,8 @@ svg {
     flex-direction: column;
     align-items: flex-start;
   }
-  .portrait > img {
-    height: 300px;
-  }
   .about .display-title {
     font-size: 82px;
-  }
-  .about__star {
-    width: 56px;
-    height: 56px;
   }
   .project-card h3 {
     font-size: 28px;

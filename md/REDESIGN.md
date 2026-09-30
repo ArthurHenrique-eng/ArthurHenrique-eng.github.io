@@ -4,7 +4,7 @@
 
 Referência: design **ArthurHenrique-eng.github.io** no Canva, `DAHWpfwU4MU`, versão consultada em 30/09/2026.
 
-Foram aproveitados a paleta azul/creme/rosa, os títulos grandes, os cartões de projetos e a seção de contato. A implementação usa a foto e o conteúdo profissional de Arthur. Os textos provisórios e imagens de produtos do template foram substituídos pelo conteúdo dos projetos.
+Foram aproveitados os títulos grandes, os cartões de projetos e a composição abstrata aprovada da seção de projetos. Após a revisão de Arthur, abertura, apresentação e contato usam fundo preto, sem estrelas decorativas. O painel de perfil em Python substitui a foto com moldura; a faixa de tecnologias foi removida. As marcas dos projetos mantêm a transparência original sobre cartões escuros. Os textos provisórios e imagens de produtos do template foram substituídos pelo conteúdo profissional e pelos projetos de Arthur.
 
 A composição abstrata da seção de projetos é desenhada em CSS. Os ícones são SVG locais. Não há bibliotecas de interface, dependências de CDN ou rastreadores.
 
@@ -33,7 +33,7 @@ As capturas foram obtidas executando as interfaces localmente, sem autenticaçã
 - Setas do teclado, Escape, foco contido no diálogo e retorno ao elemento de origem.
 - Filtros usam `hidden` e `aria-pressed`, sem conflito com animações de rolagem.
 - Menu móvel com estado acessível, fechamento por Escape e bloqueio do foco quando fechado.
-- Tema segue a preferência do sistema e aceita escolha persistente. A indisponibilidade de `localStorage` não interrompe o restante da página.
+- Tema escuro por padrão, com escolha persistente entre claro e escuro. As seções de abertura, apresentação e contato permanecem pretas em ambos os temas. A indisponibilidade de `localStorage` não interrompe o restante da página.
 - Copiar contato apresenta uma alternativa manual se a área de transferência estiver indisponível.
 - Formulário valida conteúdo, mantém os dados preenchidos e prepara um e-mail para revisão pelo visitante.
 - Conteúdo e links essenciais disponíveis com JavaScript desativado.
@@ -44,7 +44,7 @@ As capturas foram obtidas executando as interfaces localmente, sem autenticaçã
 Verificação no Chromium, com inspeção visual de desktop e mobile e testes automatizados de interação:
 
 - Nove larguras: **320, 360, 390, 600, 768, 800, 1024, 1440 e 1920 px**, sem transbordamento horizontal.
-- As **13 imagens utilizadas** carregadas; nenhum erro de JavaScript ou recurso HTTP ausente.
+- As **12 imagens utilizadas** carregadas; nenhum erro de JavaScript ou recurso HTTP ausente.
 - Filtros: Todos 7, Web 6, Python 5, Dados 6; resultados permanecem corretos após rolagem.
 - Galeria com sete imagens únicas, navegação circular, teclas direcionais, Tab e Escape.
 - Tema claro/escuro, persistência após recarregar e uso com armazenamento bloqueado.
@@ -54,4 +54,4 @@ Verificação no Chromium, com inspeção visual de desktop e mobile e testes au
 - Auditoria axe-core: **nenhuma violação detectada** nas verificações WCAG 2 A/AA e 2.1 AA em ambos os temas.
 - Sintaxe JavaScript e `git diff --check` sem erros.
 
-Os arquivos de imagem usados na página somam aproximadamente **419 KB**, contra **5,29 MB** dos arquivos de origem, uma redução de cerca de **92%**. As fontes são servidas pelo próprio site, com suas licenças incluídas.
+As 12 imagens exibidas na página somam aproximadamente **333 KB** em WebP. Os arquivos originais continuam preservados no repositório. As fontes são servidas pelo próprio site, com suas licenças incluídas.

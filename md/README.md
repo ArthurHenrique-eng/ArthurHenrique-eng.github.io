@@ -6,14 +6,14 @@ Portfólio pessoal de Arthur Henrique de Paula Barbosa, estudante de Desenvolvim
 
 ## Identidade visual
 
-A versão de setembro de 2026 combina o protótipo do Canva com o conteúdo do portfólio original: azul, creme e rosa, títulos expressivos, foto pessoal, capturas reais dos projetos e as marcas existentes.
+A versão de setembro de 2026 combina o protótipo do Canva com o conteúdo do portfólio original: fundos pretos na abertura, apresentação e contato; títulos expressivos; painel de desenvolvimento; capturas reais dos projetos e marcas com transparência. O bloco de projetos mantém a composição aprovada do protótipo. O tema escuro é o padrão, com opção de tema claro persistente.
 
 ## Estrutura
 
 - `index.html`: conteúdo semântico, sete projetos, apresentação, formação, certificações, galeria e contato.
 - `css/style.css`: identidade visual, temas claro/escuro e estilos responsivos.
 - `js/script.js`: menu, filtros, galeria com teclado, tema, cópia de contatos e preparação de e-mail.
-- `assets/img/optimized/`: imagens WebP usadas na página, com cerca de 92% de redução em bytes em relação aos arquivos de origem.
+- `assets/img/optimized/`: imagens WebP otimizadas; as 12 imagens exibidas totalizam cerca de 333 KB.
 - `assets/img/Prints/`, `assets/img/galeria/` e `assets/img/perfil/`: imagens originais preservadas.
 - `assets/fonts/`: fontes Anton e Manrope hospedadas localmente e suas licenças OFL.
 - `md/REDESIGN.md`: decisões de implementação, origem dos novos recursos e validação.

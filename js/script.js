@@ -6,7 +6,6 @@ const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 function initTheme() {
   const button = $("#themeToggle");
-  const preference = window.matchMedia("(prefers-color-scheme: dark)");
   const key = "arthur-portfolio-tema";
   let saved = null;
   try {
@@ -25,7 +24,7 @@ function initTheme() {
     );
     button.title = button.getAttribute("aria-label");
   }
-  apply(saved || (preference.matches ? "dark" : "light"));
+  apply(saved || "dark");
   button.hidden = false;
   button.addEventListener("click", () => {
     saved = document.body.dataset.theme === "dark" ? "light" : "dark";
@@ -35,9 +34,6 @@ function initTheme() {
     } catch {
       /* The toggle still works. */
     }
-  });
-  preference.addEventListener("change", (event) => {
-    if (!saved) apply(event.matches ? "dark" : "light");
   });
 }
 
