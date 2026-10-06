@@ -197,6 +197,119 @@ function initGallery() {
   });
 }
 
+function initCertificates() {
+  const dialog = $("#certificateModal");
+  const cards = $$("[data-certificate-card]");
+  if (!dialog || !cards.length || typeof dialog.showModal !== "function") return;
+
+  const picture = $("#certificateModalImage");
+  const title = $("#certificateModalTitle");
+  const loading = $("#certificateModalLoading");
+  const error = $("#certificateModalError");
+  const status = $("#certificateModalStatus");
+  const linkedin = $("#certificateLinkedInButton");
+  const close = $("#certificateModalClose");
+  let lastFocus = null;
+
+  function lockLinkedIn() {
+    linkedin.setAttribute("aria-disabled", "true");
+    linkedin.tabIndex = -1;
+    linkedin.classList.add("is-disabled");
+    status.textContent =
+      "O LinkedIn será liberado depois que a imagem do certificado carregar.";
+  }
+
+  function unlockLinkedIn() {
+    linkedin.setAttribute("aria-disabled", "false");
+    linkedin.tabIndex = 0;
+    linkedin.classList.remove("is-disabled");
+    status.textContent =
+      "Certificado carregado. Agora você pode abrir a credencial no LinkedIn.";
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      lastFocus = card;
+      title.textContent = card.dataset.title || "Certificado";
+      linkedin.href = card.dataset.linkedin || "#";
+      lockLinkedIn();
+      error.hidden = true;
+      loading.hidden = false;
+      picture.hidden = true;
+      picture.alt = card.dataset.title
+        ? `Certificado: ${card.dataset.title}`
+        : "Certificado";
+      picture.removeAttribute("src");
+
+      dialog.showModal();
+      document.body.classList.add("modal-open");
+      picture.src = card.dataset.image;
+    });
+  });
+
+  picture.addEventListener("load", () => {
+    loading.hidden = true;
+    error.hidden = true;
+    picture.hidden = false;
+    unlockLinkedIn();
+  });
+
+  picture.addEventListener("error", () => {
+    loading.hidden = true;
+    picture.hidden = true;
+    error.hidden = false;
+    lockLinkedIn();
+    status.textContent =
+      "A imagem não carregou, então o botão do LinkedIn continua bloqueado.";
+  });
+
+  linkedin.addEventListener("click", (event) => {
+    if (linkedin.getAttribute("aria-disabled") === "true") {
+      event.preventDefault();
+    }
+  });
+
+  close.addEventListener("click", () => dialog.close());
+
+  dialog.addEventListener("click", (event) => {
+    const rect = dialog.getBoundingClientRect();
+    const outside =
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom;
+    if (event.target === dialog && outside) dialog.close();
+  });
+
+  dialog.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+    const controls = $$(
+      'button:not([disabled]), a[href]:not([aria-disabled="true"])',
+      dialog,
+    ).filter((element) => element.getClientRects().length);
+    const first = controls[0];
+    const last = controls[controls.length - 1];
+    if (!first || !last) return;
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
+  dialog.addEventListener("close", () => {
+    document.body.classList.remove("modal-open");
+    picture.removeAttribute("src");
+    picture.hidden = true;
+    loading.hidden = false;
+    error.hidden = true;
+    lockLinkedIn();
+    if (lastFocus?.isConnected) lastFocus.focus({ preventScroll: true });
+  });
+}
+
 let toastTimer;
 function showToast(message) {
   const toast = $("#toast");
@@ -284,6 +397,7 @@ initTheme();
 initMenu();
 initFilters();
 initGallery();
+initCertificates();
 initCopy();
 initContact();
 initActiveNavigation();
