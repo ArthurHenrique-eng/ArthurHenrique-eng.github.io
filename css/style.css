@@ -2174,3 +2174,5 @@ body[data-theme="light"] .enemtri-preview__content p { color:#657184; }
 .enemtri-logo__head { fill:#0a2a58; stroke:var(--text); stroke-width:4; }
 .enemtri-logo__mark { fill:#0868ed; }.enemtri-logo__green { fill:#20ad87; }
 @media (max-width:700px) { .projects-all-button { width:100%; justify-content:center; } .enemtri-preview { padding:10px; } .enemtri-preview__top small { display:none; } }
+
+.enemtri-mini-logo{width:104px;height:auto;display:block;overflow:visible}.enemtri-mini-logo__enem{font:900 27px Arial,sans-serif;fill:var(--text);letter-spacing:-2px}.enemtri-mini-logo__tri{font:900 14px Arial,sans-serif;fill:#0868ed}
