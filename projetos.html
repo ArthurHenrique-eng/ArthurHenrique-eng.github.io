@@ -383,4 +383,14 @@
             </div>
           </article></div><div class="projects-bottom"><p>Explore o código-fonte, documentação e evolução de cada projeto.</p><a class="button button--ink" href="https://github.com/ArthurHenrique-eng" target="_blank" rel="noopener noreferrer">MEU GITHUB <svg class="icon"><use href="#arrow-up-right"/></svg></a></div></section></main>
 <footer class="site-footer"><div class="container footer__bottom"><span>© <span id="anoAtual">2026</span> ARTHUR BARBOSA</span><a href="index.html">Voltar ao portfólio</a></div></footer>
-<script src="js/script.js?v=20261122-projetos" defer></script></body></html>
+<script>
+"use strict";
+const themeButton=document.querySelector("#themeToggle");
+const themeKey="arthur-portfolio-tema";
+let theme=localStorage.getItem(themeKey);
+if(!["light","dark"].includes(theme)) theme="dark";
+function applyTheme(value){document.body.dataset.theme=value;themeButton.setAttribute("aria-pressed",String(value==="dark"));themeButton.setAttribute("aria-label",`Ativar tema ${value==="dark"?"claro":"escuro"}`);}
+applyTheme(theme);
+themeButton.addEventListener("click",()=>{theme=document.body.dataset.theme==="dark"?"light":"dark";applyTheme(theme);localStorage.setItem(themeKey,theme);});
+document.querySelector("#anoAtual").textContent=new Date().getFullYear();
+</script></body></html>
