@@ -26,7 +26,7 @@
     <link rel="icon" href="/DOCS/iconArthurHenrique-eng.svg" type="image/png" />
     <link rel="preload" href="assets/fonts/anton-regular.ttf" as="font" type="font/ttf" crossorigin />
     <link rel="preload" href="assets/fonts/manrope-regular.ttf" as="font" type="font/ttf" crossorigin />
-    <link rel="stylesheet" href="css/style.css?v=20261006-certificados" />
+    <link rel="stylesheet" href="css/style.css?v=20261122-projetos" />
   </head>
   <body data-theme="dark">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -59,7 +59,7 @@
           </span>
         </a>
         <div class="nav__menu" id="navMenu">
-          <a href="#projetos">Projetos</a>
+          <a href="#projetos">Projetos principais</a>
           <a href="#sobre">Sobre mim</a>
           <a href="#formacao">Trajetória</a>
           <a class="nav__contact" href="#contato">
@@ -202,46 +202,10 @@
         </div>
       </section>
       <section id="projetos" class="section projects container" aria-labelledby="projectsTitle">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">01 / MEUS</p>
-            <h2 class="display-title" id="projectsTitle">PROJETOS</h2>
-          </div>
-        </div>
-        <div class="project-manifesto">
-          <div>
-            <p class="eyebrow">PENSAR. DESENVOLVER. EVOLUIR.</p>
-            <p>
-              DO PRIMEIRO DADO
-              <br />
-              AO ÚLTIMO PIXEL.
-            </p>
-          </div>
-          <div class="orbit-art" aria-hidden="true">
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <i></i>
-            <span>&lt;/&gt;</span>
-          </div>
-          <span class="project-manifesto__label">DADOS + BACKEND + INTERFACE</span>
-        </div>
-        <div class="projects-toolbar">
-          <div class="filters" role="group" aria-label="Filtrar projetos por categoria" hidden>
-            <button type="button" class="filter is-active" data-filter="todos" aria-pressed="true">
-              Todos
-              <span>07</span>
-            </button>
-            <button type="button" class="filter" data-filter="web" aria-pressed="false">Web</button>
-            <button type="button" class="filter" data-filter="python" aria-pressed="false">Python</button>
-            <button type="button" class="filter" data-filter="dados" aria-pressed="false">Dados</button>
-          </div>
-          <p id="projectCount" aria-live="polite" aria-atomic="true">7 projetos selecionados</p>
-        </div>
-        <div class="projects-grid" id="projetosGrid">
-          <article class="project-card" data-categories="web python dados">
+  <div class="section-heading"><div><p class="eyebrow">01 / EM DESTAQUE</p><h2 class="display-title" id="projectsTitle">PROJETOS PRINCIPAIS</h2></div></div>
+  <div class="project-manifesto"><div><p class="eyebrow">NO AR. ACESSÍVEIS. EM EVOLUÇÃO.</p><p>PROJETOS<br>EM PRODUÇÃO.</p></div><div class="orbit-art" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><span>&lt;/&gt;</span></div><span class="project-manifesto__label">PRODUTOS PUBLICADOS NA INTERNET</span></div>
+  <div class="projects-toolbar"><p id="projectCount">2 projetos publicados</p></div>
+  <div class="projects-grid" id="projetosGrid"><article class="project-card" data-categories="web python dados">
             <a
               class="project-cover project-cover--churras"
               href="assets/img/optimized/churrasplan.webp"
@@ -293,414 +257,37 @@
               </ul>
               <a
                 class="project-link"
-                href="https://github.com/ArthurHenrique-eng/ChurrasPlan"
+                href="https://churrasplan.vercel.app" target="_blank" rel="noopener noreferrer"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Explorar projeto
+                Acessar plataforma
                 <svg class="icon" aria-hidden="true">
                   <use href="#arrow-up-right" />
                 </svg>
-                <span class="sr-only">ChurrasPlan no GitHub</span>
+                
               </a>
             </div>
-          </article>
-          <article class="project-card" data-categories="web python dados">
-            <a
-              class="project-cover project-cover--talentix"
-              href="assets/img/optimized/talentix.webp"
-              data-gallery-item
-              data-title="Talentix — acesso de candidatos e empresas"
-              data-image="assets/img/optimized/talentix.webp"
-              aria-label="Ampliar tela do Talentix"
-            >
-              <span class="project-cover__index">02 / RECRUTAMENTO</span>
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <span>talentix</span>
-                </div>
-                <img
-                  src="assets/img/optimized/talentix.webp"
-                  alt="Talentix — acesso de candidatos e empresas"
-                  loading="lazy"
-                  width="1440"
-                  height="900"
-                />
-              </div>
-              <span class="project-cover__open">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-              </span>
-            </a>
-            <div class="project-card__body">
-              <div class="project-card__heading">
-                <h3>TALENTIX</h3>
-                <span class="project-type">EM EQUIPE</span>
-              </div>
-              <div class="scope" aria-label="Camadas do projeto">
-                <span>Dados</span>
-                <span>Backend</span>
-                <span>Interface</span>
-              </div>
-              <p>
-                Conectando candidatos e empresas. Projeto acadêmico de recrutamento com perfis, vagas, candidaturas e uma API organizada em módulos.
-              </p>
-              <ul class="tags" aria-label="Tecnologias">
-                <li>Python</li>
-                <li>FastAPI</li>
-                <li>MySQL</li>
-                <li>JavaScript</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/PROJETO-SENAC-MINAS/Talentix"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explorar projeto
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-                <span class="sr-only">Talentix no GitHub</span>
-              </a>
-            </div>
-          </article>
-          <article class="project-card" data-categories="web dados">
-            <a
-              class="project-cover project-cover--fit"
-              href="assets/img/optimized/academia-fit.webp"
-              data-gallery-item
-              data-title="Academia Fit — página inicial"
-              data-image="assets/img/optimized/academia-fit.webp"
-              aria-label="Ampliar tela do Academia Fit"
-            >
-              <span class="project-cover__index">03 / GESTÃO DE ACADEMIAS</span>
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <span>academia fit</span>
-                </div>
-                <img
-                  src="assets/img/optimized/academia-fit.webp"
-                  alt="Academia Fit — página inicial"
-                  loading="lazy"
-                  width="1440"
-                  height="900"
-                />
-              </div>
-              <span class="project-cover__open">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-              </span>
-            </a>
-            <div class="project-card__body">
-              <div class="project-card__heading">
-                <h3>ACADEMIA FIT</h3>
-                <span class="project-type">WEB</span>
-              </div>
-              <div class="scope" aria-label="Camadas do projeto">
-                <span>Dados</span>
-                <span>Backend</span>
-                <span>Interface</span>
-              </div>
-              <p>
-                Uma experiência digital para academias. Alunos, treinos, planos e evolução física reunidos em um sistema de gerenciamento.
-              </p>
-              <ul class="tags" aria-label="Tecnologias">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/ArthurHenrique-eng/Academia_Fit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explorar projeto
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-                <span class="sr-only">Academia Fit no GitHub</span>
-              </a>
-            </div>
-          </article>
-          <article class="project-card" data-categories="web python dados">
-            <a
-              class="project-cover project-cover--lumora"
-              href="assets/img/optimized/lumora.webp"
-              data-gallery-item
-              data-title="Lumora App — interface de gestão financeira"
-              data-image="assets/img/optimized/lumora.webp"
-              aria-label="Ampliar tela do Lumora App"
-            >
-              <span class="project-cover__index">04 / GESTÃO FINANCEIRA</span>
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <span>lumora app</span>
-                </div>
-                <img
-                  src="assets/img/optimized/lumora.webp"
-                  alt="Lumora App — interface de gestão financeira"
-                  loading="lazy"
-                  width="1440"
-                  height="900"
-                />
-              </div>
-              <span class="project-cover__open">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-              </span>
-            </a>
-            <div class="project-card__body">
-              <div class="project-card__heading">
-                <h3>LUMORA APP</h3>
-                <span class="project-type">PESSOAL</span>
-              </div>
-              <div class="scope" aria-label="Camadas do projeto">
-                <span>Dados</span>
-                <span>Backend</span>
-                <span>Interface</span>
-              </div>
-              <p>
-                Mais clareza para as finanças. Aplicação web com autenticação, dashboard interativo e análise de dados financeiros.
-              </p>
-              <ul class="tags" aria-label="Tecnologias">
-                <li>Python</li>
-                <li>Flask</li>
-                <li>SQLite</li>
-                <li>JavaScript</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/ArthurHenrique-eng/LUMORA-APP"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explorar projeto
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-                <span class="sr-only">Lumora App no GitHub</span>
-              </a>
-            </div>
-          </article>
-          <article class="project-card" data-categories="web python dados">
-            <a
-              class="project-cover project-cover--library"
-              href="assets/img/optimized/biblioteca.webp"
-              data-gallery-item
-              data-title="Sistema Biblioteca — catálogo e gerenciamento"
-              data-image="assets/img/optimized/biblioteca.webp"
-              aria-label="Ampliar tela do Biblioteca"
-            >
-              <span class="project-cover__index">05 / ORGANIZAÇÃO ESCOLAR</span>
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <span>biblioteca</span>
-                </div>
-                <img
-                  src="assets/img/optimized/biblioteca.webp"
-                  alt="Sistema Biblioteca — catálogo e gerenciamento"
-                  loading="lazy"
-                  width="1440"
-                  height="900"
-                />
-              </div>
-              <span class="project-cover__open">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-              </span>
-            </a>
-            <div class="project-card__body">
-              <div class="project-card__heading">
-                <h3>BIBLIOTECA</h3>
-                <span class="project-type">WEB</span>
-              </div>
-              <div class="scope" aria-label="Camadas do projeto">
-                <span>Dados</span>
-                <span>Backend</span>
-                <span>Interface</span>
-              </div>
-              <p>
-                Livros e empréstimos no lugar certo. Sistema para bibliotecas escolares com controle de acervo, alunos e devoluções.
-              </p>
-              <ul class="tags" aria-label="Tecnologias">
-                <li>Python</li>
-                <li>MySQL</li>
-                <li>HTML</li>
-                <li>JavaScript</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/ArthurHenrique-eng/SistemaBiblioteca"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explorar projeto
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-                <span class="sr-only">Biblioteca no GitHub</span>
-              </a>
-            </div>
-          </article>
-          <article class="project-card" data-categories="python">
-            <a
-              class="project-cover project-cover--python"
-              href="assets/img/optimized/python.webp"
-              data-gallery-item
-              data-title="Sistema Python — autenticação de usuários"
-              data-image="assets/img/optimized/python.webp"
-              aria-label="Ampliar tela do Sistema Python"
-            >
-              <span class="project-cover__index">06 / APLICAÇÃO DESKTOP</span>
-              <div class="desktop-frame">
-                <div class="browser-frame__bar">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <span>sistema python</span>
-                </div>
-                <img
-                  src="assets/img/optimized/python.webp"
-                  alt="Sistema Python — autenticação de usuários"
-                  loading="lazy"
-                  width="422"
-                  height="500"
-                />
-              </div>
-              <span class="project-cover__open">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-              </span>
-            </a>
-            <div class="project-card__body">
-              <div class="project-card__heading">
-                <h3>SISTEMA PYTHON</h3>
-                <span class="project-type">DESKTOP</span>
-              </div>
-              <div class="scope" aria-label="Camadas do projeto">
-                <span>Backend</span>
-                <span>Interface</span>
-              </div>
-              <p>
-                Acesso com validação de credenciais. Aplicação desktop com autenticação, limite de tentativas e organização modular.
-              </p>
-              <ul class="tags" aria-label="Tecnologias">
-                <li>Python</li>
-                <li>Tkinter</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/ArthurHenrique-eng/SISTEMA_PYTHON"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explorar projeto
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-                <span class="sr-only">Sistema Python no GitHub</span>
-              </a>
-            </div>
-          </article>
-          <article class="project-card project-card--wide" data-categories="web dados">
-            <a
-              class="project-cover project-cover--stock"
-              href="assets/img/optimized/estoque.webp"
-              data-gallery-item
-              data-title="Gestão de Estoque — painel de produtos"
-              data-image="assets/img/optimized/estoque.webp"
-              aria-label="Ampliar tela do Gestão de Estoque"
-            >
-              <span class="project-cover__index">07 / CONTROLE OPERACIONAL</span>
-              <div class="browser-frame">
-                <div class="browser-frame__bar">
-                  <i></i>
-                  <i></i>
-                  <i></i>
-                  <span>gestão de estoque</span>
-                </div>
-                <img
-                  src="assets/img/optimized/estoque.webp"
-                  alt="Gestão de Estoque — painel de produtos"
-                  loading="lazy"
-                  width="1440"
-                  height="900"
-                />
-              </div>
-              <span class="project-cover__open">
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-              </span>
-            </a>
-            <div class="project-card__body">
-              <div class="project-card__heading">
-                <h3>GESTÃO DE ESTOQUE</h3>
-                <span class="project-type">WEB</span>
-              </div>
-              <div class="scope" aria-label="Camadas do projeto">
-                <span>Dados</span>
-                <span>Backend</span>
-                <span>Interface</span>
-              </div>
-              <p>
-                Organização para a rotina de um negócio. Controle de produtos, lotes, vendas e relatórios em um painel administrativo.
-              </p>
-              <ul class="tags" aria-label="Tecnologias">
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
-              <a
-                class="project-link"
-                href="https://github.com/ArthurHenrique-eng/GESTAO_ESTOQUE"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Explorar projeto
-                <svg class="icon" aria-hidden="true">
-                  <use href="#arrow-up-right" />
-                </svg>
-                <span class="sr-only">Gestão de Estoque no GitHub</span>
-              </a>
-            </div>
-          </article>
-        </div>
-        <div class="projects-bottom">
-          <p>Projetos pessoais e acadêmicos em constante evolução.</p>
-          <a
-            class="text-link"
-            href="https://github.com/ArthurHenrique-eng"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Mais no meu GitHub
-            <svg class="icon" aria-hidden="true">
-              <use href="#arrow-up-right" />
-            </svg>
-          </a>
-        </div>
-      </section>
-      <section id="galeria" class="gallery section" aria-labelledby="galleryTitle">
+          </article> <article class="project-card project-card--enemtri" data-categories="web python dados">
+  <a class="project-cover project-cover--enemtri" href="https://enemtri.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Abrir ENEM TRI">
+    <span class="project-cover__index">02 / EDUCAÇÃO</span>
+    <div class="enemtri-preview" aria-hidden="true">
+      <div class="enemtri-preview__top"><span class="enemtri-mark">●</span><strong>ENEM<span>TRI</span></strong><small>Entrar&nbsp;&nbsp; Criar conta</small></div>
+      <div class="enemtri-preview__content"><div><b>A prova oficial<br>do ENEM, com<br>correção na hora</b><p>Abra o PDF do INEP, marque suas respostas e veja seus acertos pelo gabarito oficial.</p><span class="enemtri-preview__button">Criar conta</span></div><div class="enemtri-preview__paper"><strong>enem<span>2024</span></strong><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <span class="project-cover__open"><svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg></span>
+  </a>
+  <div class="project-card__body">
+    <div class="project-card__heading"><h3>ENEM TRI</h3><span class="project-type">PESSOAL</span></div>
+    <div class="scope" aria-label="Camadas do projeto"><span>Dados</span><span>Backend</span><span>Interface</span></div>
+    <p>Plataforma de simulados com provas oficiais do INEP, cartão-resposta digital e estimativa de desempenho pela TRI.</p>
+    <ul class="tags" aria-label="Tecnologias"><li>Python</li><li>FastAPI</li><li>Supabase</li><li>JavaScript</li></ul>
+    <a class="project-link" href="https://enemtri.onrender.com" target="_blank" rel="noopener noreferrer">Acessar plataforma <svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg></a>
+  </div>
+</article></div>
+  <div class="projects-bottom"><p>Estes são os projetos que já podem ser acessados pela internet.</p><a class="button button--ink projects-all-button" href="projetos.html">VER OUTROS PROJETOS <svg class="icon" aria-hidden="true"><use href="#arrow-up-right" /></svg></a></div>
+</section>
+<section id="galeria" class="gallery section" aria-labelledby="galleryTitle">
         <div class="container">
           <div class="section-heading">
             <div>
