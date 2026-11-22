@@ -2148,3 +2148,29 @@ svg {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Projetos publicados e página de repositórios */
+.projects-all-button { min-height: 54px; padding: 0 26px; display: inline-flex; align-items: center; gap: 12px; font-size: 10px; letter-spacing: .12em; font-weight: 800; }
+.project-cover--enemtri { background: linear-gradient(135deg,#10141b,#1a2638 55%,#0c1422); padding: 25px 24px 0; }
+body[data-theme="light"] .project-cover--enemtri { background: linear-gradient(135deg,#f3f5f8,#e6edf8 55%,#d9e5f8); }
+.enemtri-preview { height: 100%; width: 100%; overflow: hidden; border-radius: 8px 8px 0 0; background: #12161c; color: #e9edf4; box-shadow: 0 12px 30px rgba(0,0,0,.28); padding: 14px 16px; }
+body[data-theme="light"] .enemtri-preview { background: #fbfaf8; color: #202832; box-shadow: 0 12px 30px rgba(20,35,60,.12); }
+.enemtri-preview__top { display:flex; align-items:center; gap:7px; font-size:12px; border-bottom:1px solid rgba(130,150,180,.22); padding-bottom:12px; }
+.enemtri-mark { color:#0d64ed; font-size:16px; }
+.enemtri-preview__top strong { font-size:14px; letter-spacing:-.06em; }.enemtri-preview__top strong span { color:#0868ed; font-size:9px; }
+.enemtri-preview__top small { margin-left:auto; color:#8e9aab; font-size:7px; }
+.enemtri-preview__content { display:grid; grid-template-columns:1fr .72fr; gap:12px; align-items:center; height:calc(100% - 34px); }
+.enemtri-preview__content b { font-size:clamp(13px,2vw,22px); line-height:1.08; letter-spacing:-.04em; }
+.enemtri-preview__content p { max-width:230px; color:#9aa5b5; font-size:8px; line-height:1.55; margin:10px 0; }
+body[data-theme="light"] .enemtri-preview__content p { color:#657184; }
+.enemtri-preview__button { display:inline-block; padding:7px 12px; border-radius:4px; background:#2d5ca7; color:white; font-size:7px; }
+.enemtri-preview__paper { aspect-ratio: .72; transform:rotate(-8deg); background:linear-gradient(160deg,#148ce3 0 16%,#a7dff3 16% 88%,#f6f8fb 88%); color:#173a65; padding:12px 8px; box-shadow:0 8px 20px rgba(0,0,0,.22); }
+.enemtri-preview__paper strong { font-size:15px; display:block; }.enemtri-preview__paper strong span { color:#1268bd; }
+.enemtri-preview__paper i { display:block; height:3px; background:rgba(24,70,110,.28); margin-top:8px; border-radius:4px; }
+.enemtri-logo { width:min(100%,420px); height:auto; display:block; }
+.enemtri-logo__enem { font:900 66px Arial,sans-serif; fill:var(--text); letter-spacing:-5px; }
+.enemtri-logo__tri { font:900 34px Arial,sans-serif; fill:#0868ed; }
+.enemtri-logo__head { fill:#0a2a58; stroke:var(--text); stroke-width:4; }
+.enemtri-logo__mark { fill:#0868ed; }.enemtri-logo__green { fill:#20ad87; }
+@media (max-width:700px) { .projects-all-button { width:100%; justify-content:center; } .enemtri-preview { padding:10px; } .enemtri-preview__top small { display:none; } }
