@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#000000"><title>Outros projetos — Arthur Barbosa</title><meta name="description" content="Projetos acadêmicos e pessoais de Arthur Barbosa, com acesso aos respectivos repositórios no GitHub."><link rel="icon" href="/DOCS/iconArthurHenrique-eng.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css?v=20261122-projetos"></head>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#000000"><title>Outros projetos — Arthur Barbosa</title><meta name="description" content="Projetos acadêmicos e pessoais de Arthur Barbosa, com acesso aos respectivos repositórios no GitHub."><link rel="icon" href="DOCS/iconArthurHenrique-eng.svg" type="image/svg+xml"><link rel="stylesheet" href="css/style.css?v=20261122-animacoes"></head>
 <body data-theme="dark"><a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="arrow-up-right" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol><symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></symbol><symbol id="moon" viewBox="0 0 24 24"><path d="M21 13A9 9 0 0 1 11 3a9 9 0 1 0 10 10Z"/></symbol></svg>
 <header class="site-header"><nav class="nav container" aria-label="Navegação principal"><a class="brand" href="index.html#inicio"><span class="brand__logo"><img src="DOCS/ABLogotipo.webp" width="2000" height="2000" alt=""></span><span class="brand__descriptor">ARTHUR BARBOSA<br>DESENVOLVEDOR WEB FULL STACK</span></a><div class="nav__menu" id="navMenu"><a href="index.html#projetos">Projetos principais</a><a href="projetos.html" aria-current="page">Outros projetos</a><a href="index.html#sobre">Sobre mim</a><a href="index.html#formacao">Trajetória</a><a class="nav__contact" href="index.html#contato">Vamos conversar <svg class="icon"><use href="#arrow-up-right"/></svg></a></div><div class="nav__controls"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar tema claro" aria-pressed="true"><svg class="icon"><use href="#moon"/></svg><svg class="icon"><use href="#sun"/></svg></button></div></nav></header>
@@ -383,14 +383,34 @@
             </div>
           </article></div><div class="projects-bottom"><p>Explore o código-fonte, documentação e evolução de cada projeto.</p><a class="button button--ink" href="https://github.com/ArthurHenrique-eng" target="_blank" rel="noopener noreferrer">MEU GITHUB <svg class="icon"><use href="#arrow-up-right"/></svg></a></div></section></main>
 <footer class="site-footer"><div class="container footer__bottom"><span>© <span id="anoAtual">2026</span> ARTHUR BARBOSA</span><a href="index.html">Voltar ao portfólio</a></div></footer>
-<script>
-"use strict";
-const themeButton=document.querySelector("#themeToggle");
-const themeKey="arthur-portfolio-tema";
-let theme=localStorage.getItem(themeKey);
-if(!["light","dark"].includes(theme)) theme="dark";
-function applyTheme(value){document.body.dataset.theme=value;themeButton.setAttribute("aria-pressed",String(value==="dark"));themeButton.setAttribute("aria-label",`Ativar tema ${value==="dark"?"claro":"escuro"}`);}
-applyTheme(theme);
-themeButton.addEventListener("click",()=>{theme=document.body.dataset.theme==="dark"?"light":"dark";applyTheme(theme);localStorage.setItem(themeKey,theme);});
-document.querySelector("#anoAtual").textContent=new Date().getFullYear();
-</script></body></html>
+
+    <dialog class="lightbox" id="lightbox" aria-labelledby="lightboxCaption">
+      <div class="lightbox__toolbar">
+        <span id="lightboxCounter"></span>
+        <button id="lightboxFechar" type="button" aria-label="Fechar visualização" autofocus>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" />
+          </svg>
+        </button>
+      </div>
+      <figure class="lightbox__figure">
+        <img id="lightboxImage" alt="" />
+        <figcaption id="lightboxCaption" aria-live="polite"></figcaption>
+      </figure>
+      <p id="lightboxError" role="status" hidden>
+        Não foi possível carregar esta imagem.
+        <a id="lightboxOriginal" href="#">Abrir imagem original</a>
+      </p>
+      <div class="lightbox__navigation">
+        <button type="button" id="lightboxAnterior" aria-label="Imagem anterior">
+          ←
+          <span>Anterior</span>
+        </button>
+        <span>Use as setas do teclado para navegar</span>
+        <button type="button" id="lightboxProximo" aria-label="Próxima imagem">
+          <span>Próxima</span>
+          →
+        </button>
+      </div>
+    </dialog>
+<script src="js/script.js?v=20261122-animacoes"></script></body></html>

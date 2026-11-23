@@ -2176,3 +2176,413 @@ body[data-theme="light"] .enemtri-preview__content p { color:#657184; }
 @media (max-width:700px) { .projects-all-button { width:100%; justify-content:center; } .enemtri-preview { padding:10px; } .enemtri-preview__top small { display:none; } }
 
 .enemtri-mini-logo{width:104px;height:auto;display:block;overflow:visible}.enemtri-mini-logo__enem{font:900 27px Arial,sans-serif;fill:var(--text);letter-spacing:-2px}.enemtri-mini-logo__tri{font:900 14px Arial,sans-serif;fill:#0868ed}
+
+/* ==========================================================================
+   Melhorias e animações (nov/2026)
+   Tudo abaixo complementa o visual original; nada acima foi alterado.
+   ========================================================================== */
+
+/* ---------- Barra de progresso de leitura ---------- */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  height: 3px;
+  background: linear-gradient(90deg, #77bdcb, #f4b4c3);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+/* ---------- Cabeçalho ao rolar ---------- */
+.site-header {
+  transition: box-shadow 0.3s;
+}
+.site-header.is-scrolled {
+  box-shadow: 0 12px 30px #0006;
+}
+.brand__logo img {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.brand:hover .brand__logo img {
+  transform: rotate(-8deg) scale(1.06);
+}
+
+/* ---------- Entrada do topo (uma sequência só, no carregamento) ---------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+@keyframes line-up {
+  from {
+    transform: translateY(105%);
+  }
+}
+@keyframes frame-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96) rotate(1.5deg);
+  }
+}
+@keyframes icon-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.6);
+  }
+  70% {
+    transform: translateY(-4px) scale(1.08);
+  }
+}
+
+.hero__line {
+  display: block;
+  overflow: hidden;
+  /* Folga para o topo e a base das letras da Anton não serem cortados. */
+  padding-block: 0.06em;
+  margin-block: -0.06em;
+}
+.hero__line > span {
+  display: block;
+  animation: line-up 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s backwards;
+}
+.hero__line + .hero__line > span {
+  animation-delay: 0.27s;
+}
+.hero .eyebrow {
+  animation: fade-up 0.7s ease-out backwards;
+}
+.hero__role {
+  animation: fade-up 0.7s ease-out 0.45s backwards;
+}
+.hero__description {
+  animation: fade-up 0.7s ease-out 0.55s backwards;
+}
+.hero__actions {
+  animation: fade-up 0.7s ease-out 0.65s backwards;
+}
+.hero__copy .profile-socials {
+  animation: fade-up 0.7s ease-out 0.75s backwards;
+}
+.hero__frame {
+  animation: frame-in 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s backwards;
+}
+.hero__availability {
+  animation: fade-up 0.7s ease-out 1.25s backwards;
+}
+.hero__technologies li {
+  animation: icon-pop 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+.hero__technologies li:nth-child(1) { animation-delay: 0.8s; }
+.hero__technologies li:nth-child(2) { animation-delay: 0.86s; }
+.hero__technologies li:nth-child(3) { animation-delay: 0.92s; }
+.hero__technologies li:nth-child(4) { animation-delay: 0.98s; }
+.hero__technologies li:nth-child(5) { animation-delay: 1.04s; }
+.hero__technologies li:nth-child(6) { animation-delay: 1.1s; }
+.hero__technologies li:nth-child(7) { animation-delay: 1.16s; }
+
+/* Ícones de tecnologia pulam ao passar o mouse */
+.hero__technologies img {
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.hero__technologies li:hover img {
+  transform: translateY(-7px) rotate(-6deg) scale(1.08);
+}
+
+/* Inclinação 3D da foto (controlada pelo JS só em mouse) */
+.hero__frame {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 0.25s ease-out, box-shadow 0.3s;
+  will-change: transform;
+}
+.hero__frame:hover {
+  box-shadow: 0 30px 60px -25px #000c;
+}
+.hero__portrait {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.hero__frame:hover .hero__portrait {
+  transform: scale(1.02);
+}
+
+/* ---------- Ponto de status pulsando ---------- */
+.status-dot {
+  position: relative;
+}
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: currentColor;
+  animation: dot-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes dot-ping {
+  75%,
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* ---------- Ponto dos títulos piscando como cursor ---------- */
+.title-dot {
+  animation: cursor-blink 1.1s steps(1, end) infinite;
+}
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Órbitas girando devagar ---------- */
+.orbit-art {
+  animation: orbit-spin 60s linear infinite;
+}
+.orbit-art > span {
+  animation: orbit-counter 60s linear infinite;
+}
+@keyframes orbit-spin {
+  from {
+    transform: rotate(-28deg);
+  }
+  to {
+    transform: rotate(332deg);
+  }
+}
+@keyframes orbit-counter {
+  from {
+    transform: rotate(28deg);
+  }
+  to {
+    transform: rotate(-332deg);
+  }
+}
+.project-manifesto:hover .orbit-art,
+.project-manifesto:hover .orbit-art > span {
+  animation-duration: 14s;
+}
+
+/* ---------- Revelar ao rolar (classes aplicadas pelo JS) ---------- */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal--up {
+  transform: translateY(40px);
+}
+.reveal--pop {
+  transform: translateY(24px) scale(0.9);
+}
+.reveal--side {
+  transform: translateX(-28px);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Capas dos projetos: luz que segue o mouse ---------- */
+.project-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    280px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    #ffffff40,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.project-cover:hover::after {
+  opacity: 1;
+}
+.project-cover .browser-frame img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.project-cover:hover .browser-frame img {
+  transform: scale(1.04);
+}
+.project-cover__open {
+  z-index: 2;
+}
+.project-cover:hover .project-cover__open .icon {
+  animation: arrow-nudge 0.6s ease-in-out;
+}
+
+/* ---------- Setas dos botões e links andam no hover ---------- */
+@keyframes arrow-nudge {
+  50% {
+    transform: translate(3px, -3px);
+  }
+}
+.button .icon,
+.project-link .icon,
+.contact__email .icon,
+.contact__socials .icon,
+.nav__contact .icon,
+.certificate-card .icon,
+.gallery__item .icon {
+  transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.button:hover .icon,
+.project-link:hover .icon,
+.contact__email:hover .icon,
+.contact__socials a:hover .icon,
+.nav__contact:hover .icon,
+.certificate-card:hover .icon,
+.gallery__item:hover .icon {
+  transform: translate(3px, -3px);
+}
+
+/* Botões principais com brilho passando */
+.button--ink {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.button--ink::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(110deg, transparent 30%, #ffffff55 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.button--ink:hover::before {
+  transform: translateX(120%);
+}
+
+/* ---------- Galeria ---------- */
+.gallery__item {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.35s,
+    border-color 0.35s;
+}
+.gallery__item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -18px #000a;
+}
+
+/* ---------- Certificados ---------- */
+.certificate-card .cert-number {
+  transition: color 0.2s, transform 0.3s;
+}
+.certificate-card:hover .cert-number {
+  color: #77bdcb;
+  transform: translateX(4px);
+}
+
+/* ---------- Card "outros projetos" no espaço vazio da grade ---------- */
+.project-card--more {
+  justify-content: space-between;
+  gap: 28px;
+  padding: 32px 28px;
+  border-style: dashed;
+  color: inherit;
+  text-decoration: none;
+  background: transparent;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    background-color 0.35s,
+    color 0.35s,
+    border-color 0.35s;
+}
+.project-card--more:hover {
+  background: #d4edf0;
+  color: #203631;
+  border-color: transparent;
+}
+.project-more__count {
+  font: 400 clamp(84px, 9vw, 130px) / 0.9 var(--display);
+  letter-spacing: -0.02em;
+  transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.project-card--more:hover .project-more__count {
+  transform: translateY(-6px) rotate(-4deg);
+}
+.project-more__text {
+  display: grid;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.project-card--more:hover .project-more__text {
+  color: inherit;
+}
+.project-more__text strong {
+  font: 400 26px/1 var(--display);
+  letter-spacing: 0.01em;
+  color: var(--text, var(--ink));
+}
+.project-card--more:hover .project-more__text strong {
+  color: inherit;
+}
+.project-more__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.project-more__cta .icon {
+  transition: transform 0.3s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.project-card--more:hover .project-more__cta .icon {
+  transform: translate(4px, -4px);
+}
+
+/* ---------- Visualizadores abrindo com transição ---------- */
+.lightbox[open],
+.certificate-modal[open] {
+  animation: dialog-in 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.lightbox[open]::backdrop,
+.certificate-modal[open]::backdrop {
+  animation: backdrop-in 0.35s ease-out;
+}
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+}
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+#lightboxImage,
+#certificateModalImage {
+  animation: fade-up 0.4s ease-out;
+}
+
+/* ---------- Movimento reduzido: tudo parado e visível ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .orbit-art,
+  .orbit-art > span,
+  .status-dot::after,
+  .title-dot {
+    animation: none !important;
+  }
+  .hero__frame {
+    transform: none !important;
+  }
+}
