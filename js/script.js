@@ -6,6 +6,7 @@ const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 function initTheme() {
   const button = $("#themeToggle");
+  if (!button) return;
   const key = "arthur-portfolio-tema";
   let saved = null;
   try {
@@ -40,6 +41,7 @@ function initTheme() {
 function initMenu() {
   const toggle = $("#navToggle");
   const menu = $("#navMenu");
+  if (!toggle || !menu) return;
   const mobile = window.matchMedia("(max-width: 800px)");
   menu.classList.add("is-enhanced");
   toggle.hidden = false;
@@ -81,6 +83,9 @@ function initMenu() {
 
 function initFilters() {
   const controls = $(".filters");
+  // Os filtros foram removidos da página; sem esta verificação o script
+  // parava aqui e desligava galeria, certificados, cópia e formulário.
+  if (!controls) return;
   const buttons = $$(".filter", controls);
   const cards = $$(".project-card");
   const count = $("#projectCount");
@@ -108,8 +113,8 @@ function initFilters() {
 
 function initGallery() {
   const dialog = $("#lightbox");
-  if (typeof dialog.showModal !== "function") return;
   const links = $$("[data-gallery-item]");
+  if (!dialog || !links.length || typeof dialog.showModal !== "function") return;
   const items = [
     ...new Map(
       links.map((link) => [
@@ -320,6 +325,7 @@ function showToast(message) {
 }
 
 function initCopy() {
+  if (!$("#toast")) return;
   $$("[data-copy]").forEach((button) => {
     button.hidden = false;
     button.addEventListener("click", async () => {
@@ -335,6 +341,7 @@ function initCopy() {
 
 function initContact() {
   const form = $("#contactForm");
+  if (!form) return;
   const name = $("#contactName");
   const email = $("#contactEmail");
   const message = $("#contactMessage");
@@ -375,8 +382,10 @@ function initActiveNavigation() {
   if (!("IntersectionObserver" in window)) return;
   const links = $$("#navMenu a");
   const sections = links
+    .filter((link) => link.getAttribute("href").startsWith("#"))
     .map((link) => $(link.getAttribute("href")))
     .filter(Boolean);
+  if (!sections.length) return;
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -393,6 +402,103 @@ function initActiveNavigation() {
   sections.forEach((section) => observer.observe(section));
 }
 
+/* ---------- Animações ---------- */
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+/* Revela blocos ao rolar. Só esconde o que ainda está fora da tela,
+   então nada pisca e o conteúdo continua visível sem JavaScript. */
+function initReveal() {
+  if (reduceMotion.matches || !("IntersectionObserver" in window)) return;
+  const groups = [
+    [".section-heading, .about__heading, .contact__copy, .journey__subtitle", "up"],
+    [".project-manifesto", "up"],
+    [".projects-grid > *", "up", 110],
+    [".gallery__item", "pop", 80],
+    [".about__content > *", "up", 90],
+    [".timeline li, .experience", "up", 120],
+    [".certificates-list > *, .certifications__list > *", "side", 45],
+    [".contact__form-wrap", "up"],
+    [".projects-bottom", "up"],
+  ];
+  const viewport = window.innerHeight;
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const element = entry.target;
+        element.classList.add("is-visible");
+        observer.unobserve(element);
+        // Depois da entrada, devolve as transições originais (hover dos cards).
+        const delay = parseFloat(element.style.getPropertyValue("--reveal-delay")) || 0;
+        setTimeout(() => {
+          element.classList.remove("reveal", "is-visible", "reveal--up", "reveal--pop", "reveal--side");
+          element.style.removeProperty("--reveal-delay");
+        }, 900 + delay);
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+  );
+  groups.forEach(([selector, kind, stagger = 0]) => {
+    $$(selector).forEach((element, index) => {
+      if (element.getBoundingClientRect().top < viewport * 0.92) return;
+      element.classList.add("reveal", `reveal--${kind}`);
+      if (stagger) element.style.setProperty("--reveal-delay", `${(index % 6) * stagger}ms`);
+      observer.observe(element);
+    });
+  });
+}
+
+/* Cabeçalho compacto e barra de progresso de leitura. */
+function initScrollEffects() {
+  const header = $(".site-header");
+  const bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  bar.setAttribute("aria-hidden", "true");
+  document.body.append(bar);
+  let ticking = false;
+  function update() {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? window.scrollY / max : 0;
+    bar.style.transform = `scaleX(${progress})`;
+    header?.classList.toggle("is-scrolled", window.scrollY > 24);
+    ticking = false;
+  }
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true },
+  );
+  update();
+}
+
+/* Inclinação 3D na foto e luz que segue o mouse nas capas (só com mouse). */
+function initTilt() {
+  if (reduceMotion.matches || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  $$(".hero__frame, .project-cover").forEach((element) => {
+    const strength = element.classList.contains("hero__frame") ? 6 : 0;
+    element.addEventListener("pointermove", (event) => {
+      const rect = element.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      if (strength) {
+        element.style.setProperty("--tilt-x", `${(-y * strength).toFixed(2)}deg`);
+        element.style.setProperty("--tilt-y", `${(x * strength).toFixed(2)}deg`);
+      }
+      element.style.setProperty("--glow-x", `${((x + 0.5) * 100).toFixed(1)}%`);
+      element.style.setProperty("--glow-y", `${((y + 0.5) * 100).toFixed(1)}%`);
+    });
+    element.addEventListener("pointerleave", () => {
+      element.style.removeProperty("--tilt-x");
+      element.style.removeProperty("--tilt-y");
+    });
+  });
+}
+
 initTheme();
 initMenu();
 initFilters();
@@ -401,4 +507,8 @@ initCertificates();
 initCopy();
 initContact();
 initActiveNavigation();
-$("#anoAtual").textContent = new Date().getFullYear();
+initReveal();
+initScrollEffects();
+initTilt();
+const currentYear = $("#anoAtual");
+if (currentYear) currentYear.textContent = new Date().getFullYear();
